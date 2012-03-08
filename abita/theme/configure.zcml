@@ -1,0 +1,29 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="abita.theme">
+
+  <includeDependencies package="."/>
+
+  <i18n:registerTranslations directory="locales" />
+
+  <!-- Container for all static theme related files -->
+  <plone:static
+      directory="theme_resources"
+      type="theme"
+      name="abita.theme"
+      />
+
+  <genericsetup:registerProfile
+      name="default"
+      title="abita.theme"
+      directory="profiles/default"
+      description="Installs the abita.theme package"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <include package=".browser" />
+
+</configure>

@@ -1,0 +1,117 @@
+<rules
+    xmlns="http://namespaces.plone.org/diazo"
+    xmlns:css="http://namespaces.plone.org/diazo/css"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+    <!-- Apply theme to normal Plone pages -->
+    <theme href="index.html" css:if-content="#visual-portal-wrapper" />
+
+    <rules css:if-content="#visual-portal-wrapper">
+
+        <!-- Drop Plone's meta tags that define the content type and IE rendering mode.
+             We set those explicitly in our theme. This allows us to copy the
+             rest of the <meta> tags in one go. -->
+        <drop css:content="meta[http-equiv]" />
+        <!-- Drop the viewport meta tag from Plone -->
+        <drop css:content="meta[name=viewport]"/>
+
+        <before content="/html/head/meta" css:theme="#css" />
+        <replace content="/html/head/title" theme="/html/head/title"/>
+
+        <!-- Copy the <base> tag -->
+        <copy attributes="href" content="/html/head/base" theme="/html/head/base" />
+
+        <replace content="/html/head/title" theme="/html/head/title" />
+
+        <!-- Copy style and link tags in the order they appear in the content -->
+        <after
+            content="/html/head/style | /html/head/link"
+            css:theme="#css"
+            />
+        <!-- Drop the css target from the theme -->
+        <drop css:theme="#css" />
+
+        <!-- Drop the "type" attribute from <script> tags. HTML5 doesn't mandate
+             it and we can save a few bytes there. -->
+        <drop css:content="script" attributes="type"/>
+
+        <!-- Copy script tags in the order they appear in the content but place
+             them at the bottom of the theme. -->
+        <before
+            css:content="head > script"
+            css:theme="#javascript_at_bottom"
+            />
+
+        <!-- Copy inline javascripts from within the body -->
+        <replace
+            css:content="body script"
+            css:theme="#javascript_inline"
+            method="raw"
+            />
+
+        <!-- Drop the scripts within the body because we have copied them to the
+             end of the page -->
+        <drop css:content="#visual-portal-wrapper script"/>
+
+        <!-- Drop the javascript target from the theme -->
+        <drop css:theme="#javascript_at_bottom"/>
+
+        <!-- Copy over the id/class attributes on the body tag.
+             This is important for per-section styling -->
+        <merge attributes="class" css:content="body" css:theme="body" />
+        <copy attributes="id dir" css:content="body" css:theme="body" />
+
+        <!-- Copy the header -->
+        <before css:content="#portal-personaltools-wrapper" css:theme="#mobile-menu" />
+        <before css:content="#portal-logo" css:theme="#mobile-menu" />
+        <after css:content="#portal-searchbox" css:theme="#mobile-menu" />
+        <after css:content="#portal-globalnav" css:theme="#mobile-menu" />
+
+        <drop css:theme="#mobile-page-settings"
+              if-content="not(//*[@id='edit-bar'])" />
+
+        <!-- Users and Groups control panel - inherited rules are marked with checkmark -->
+        <replace css:content=".template-usergroup-userprefs img[src$='site_icon.gif'], .template-usergroup-groupprefs img[src$='site_icon.gif']">
+            <span>&#10003;</span>
+        </replace>
+
+        <drop attributes="style" css:content=".template-prefs_install_products_form form" />
+        <drop attributes="style" css:content=".template-prefs_install_products_form fieldset" />
+
+        <!-- Copy the body of the page -->
+        <!-- Based on the tableleftcolumndown variable order the columns for the
+             tablet view -->
+        <copy css:content="#portal-column-content" css:theme="#portal-columns" />
+
+        <rules if="$tabletleftcolumndown">
+            <after css:content="#portal-column-two" css:theme-children="#portal-columns" />
+            <after css:content="#portal-column-one" css:theme-children="#portal-columns" />
+            <prepend css:theme="#visual-portal-wrapper">
+                <xsl:attribute name="class">tablet-left-down</xsl:attribute>
+            </prepend>
+            <prepend css:theme="#portal-columns"
+                     if-content="not(//div[@id='portal-column-two'])">
+                <xsl:attribute name="class">row tablet-full-content</xsl:attribute>
+            </prepend>
+        </rules>
+
+        <rules if="not($tabletleftcolumndown)">
+            <after css:content="#portal-column-one" css:theme-children="#portal-columns" />
+            <after css:content="#portal-column-two" css:theme-children="#portal-columns" />
+            <prepend css:theme="#visual-portal-wrapper">
+                <xsl:attribute name="class">tablet-right-down</xsl:attribute>
+            </prepend>
+            <prepend css:theme="#portal-columns"
+                     if-content="not(//div[@id='portal-column-one'])">
+                <xsl:attribute name="class">row tablet-full-content</xsl:attribute>
+            </prepend>
+        </rules>
+
+        <!-- Copy the footer -->
+        <copy css:content="#portal-footer" css:theme="footer" />
+        <after css:content="#portal-colophon" css:theme="footer" />
+        <after css:content="#portal-siteactions" css:theme="footer" />
+
+    </rules>
+
+</rules>

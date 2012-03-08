@@ -1,0 +1,6 @@
+<layers>
+  <layer
+      name="abita.theme"
+      interface="abita.theme.browser.interfaces.IAbitaThemeLayer"
+      />
+</layers>
