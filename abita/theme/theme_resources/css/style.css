@@ -652,15 +652,16 @@ dd {
   border-bottom: none;
   border-left: none;
   border-right: none;
-  color: #000000 !important;
+  color: #555555 !important;
   display: inline-block;
+  font-weight: bold;
   padding: 1em;
   background: #dddddd;
   min-width: auto;
   text-decoration: none;
 }
 #portal-globalnav li a:hover {
-  background: #000000;
+  background: #205C90;
   color: #ffffff !important;
   text-decoration: none;
 }
@@ -2462,14 +2463,17 @@ dl.toc dd ol {
 #portal-footer {
   font-size: 13px;
   background: #dddddd;
+  /*color: #205C90;*/
+  color: #333333;
   padding: 1em;
-  margin: 1em 0;
-  line-height: 2em;
+  margin: 0 0;
+  line-height: 1em;
+  text-align: right;
 }
 #portal-colophon {
   font-size: 13px;
   text-align: center;
-  margin-bottom: 1em;
+  margin: 1em 0;
 }
 #portal-colophon li {
   padding: 0 0.75em;

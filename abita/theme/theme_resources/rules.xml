@@ -110,7 +110,9 @@
         <!-- Copy the footer -->
         <copy css:content="#portal-footer" css:theme="footer" />
         <after css:content="#portal-colophon" css:theme="footer" />
-        <after css:content="#portal-siteactions" css:theme="footer" />
+        <!-- <after css:content="#portal-siteactions" css:theme="footer" /> -->
+        <drop css:content="#portal-siteactions"/>
+        <drop css:content="#portal-colophon"/>
 
     </rules>
 

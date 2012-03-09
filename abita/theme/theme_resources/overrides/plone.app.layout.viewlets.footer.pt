@@ -1,0 +1,30 @@
+<div
+  metal:define-macro="portal_footer"
+  i18n:domain="plone"
+  class="row"
+  >
+  <div class="cell width-full position-0">
+    <div id="portal-footer">
+      &copy;2004-<tal:year tal:content="view/year" /> by 
+      <a
+        href="http://abita.fi/"
+        title="ABITA Open Source Technologies &amp;&amp; Open Busunesses"
+        >
+        ABITA
+      </a>&nbsp;&nbsp;|&nbsp;&nbsp;
+      Powered by 
+      <a
+        href="http://plone.org/"
+        title="Plone Open Source CMS/WCM."
+        >
+          Plone
+      </a> &amp; 
+      <a
+        href="http://python.org/"
+        title="Python Open Source Scripting Language"
+        >
+          Python
+      </a>
+    </div>
+  </div>
+</div>
