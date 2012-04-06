@@ -15,15 +15,39 @@
       Powered by 
       <a
         href="http://plone.org/"
+        target="_blank"
         title="Plone Open Source CMS/WCM."
         >
           Plone
       </a> &amp; 
       <a
         href="http://python.org/"
+        target="_blank"
         title="Python Open Source Scripting Language"
         >
           Python
+      </a> on 
+      <a
+        href="http://www.ubuntu.com/"
+        target="_blank"
+        title="Ubuntu Open Source Operating System"
+        >
+          Ubuntu
+      </a>&nbsp;&nbsp;|&nbsp;&nbsp;
+      Develped with 
+      <a
+        href="http://www.mozilla.com/firefox/"
+        target="_blank"
+        title="Firefox Open Source Browser"
+        >
+          Firefox
+      </a> &amp; 
+      <a
+        href="http://www.chromium.org/"
+        target="_blank"
+        title="Chromium Open Source Browser"
+        >
+          Chromium
       </a>
     </div>
   </div>

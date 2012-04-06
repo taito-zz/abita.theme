@@ -26,11 +26,12 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[
+        'five.grok',
         'hexagonit.testing',
+        'plone.app.portlets',
         'plone.app.theming',
         'plone.browserlayer',
         'setuptools',
-        # 'z3c.jbot',
         'plone.app.themingplugins',
         'zope.i18nmessageid',
     ],

@@ -1060,6 +1060,9 @@ a.managePortletsFallback {
 .ploneCalendar .todaynoevent {
   border: 2px solid #205c90;
 }
+.portletFirefox dd.portletItem {
+  text-align: center;
+}
 .portletItemDetails {
   display: block;
   font-size: 13px;

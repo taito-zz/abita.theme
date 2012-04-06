@@ -3,8 +3,43 @@
     xmlns:browser="http://namespaces.zope.org/browser"
     i18n_domain="abita.theme">
 
-  <!-- Set overrides folder for Just-a-Bunch-Of-Templates product -->
-  <!-- <include package="z3c.jbot" file="meta.zcml" />
-  <browser:jbot directory="overrides" layer=".interfaces.IAbitaThemeLayer" /> -->
+  <!-- Viewlet manager for top page -->
+  <browser:viewletManager
+    class="plone.app.viewletmanager.manager.OrderedViewletManager"
+    layer=".interfaces.IAbitaThemeLayer"
+    name="abita.top.manager"
+    permission="zope2.View"
+    provides=".interfaces.ITopViewletManager"
+    />
+
+  <!-- Business Topics -->
+  <browser:viewlet
+    class=".viewlets.BusinessTopicsViewlet"
+    for="*"
+    layer=".interfaces.IAbitaThemeLayer"
+    manager=".interfaces.ITopViewletManager"
+    name="abita.business.topics"
+    permission="zope2.View"
+    />
+
+  <!-- News -->
+  <browser:viewlet
+    class=".viewlets.NewsViewlet"
+    for="*"
+    layer=".interfaces.IAbitaThemeLayer"
+    manager=".interfaces.ITopViewletManager"
+    name="abita.news"
+    permission="zope2.View"
+    />
+
+  <!-- Application Releases -->
+  <browser:viewlet
+    class=".viewlets.ApplicationReleasesViewlet"
+    for="*"
+    layer=".interfaces.IAbitaThemeLayer"
+    manager=".interfaces.ITopViewletManager"
+    name="abita.application.releases"
+    permission="zope2.View"
+    />
 
 </configure>
