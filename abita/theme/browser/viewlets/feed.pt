@@ -1,18 +1,22 @@
 <section class="feed" tal:condition="view/items">
-  <h1 tal:content="view/title" />
+  <h1>
+    <a
+      tal:attributes="href view/url"
+      tal:content="view/title"
+      />
+  </h1>
   <article tal:repeat="item view/items">
     <h1>
       <a tal:content="item/title"
          tal:attributes="href item/url;
                          title item/title" />
     </h1>
-    <p
-      class="date"
-      tal:content="item/date"
-      />
-    <time datetime="1905-11-13" />
     <p tal:content="item/description" />
     <p>
+      <span
+        class="date"
+        tal:content="item/date"
+        />
       <a tal:attributes="href item/url;"
          i18n:translate="">Read more</a>
     </p>

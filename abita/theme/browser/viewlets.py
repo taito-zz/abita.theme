@@ -9,6 +9,7 @@ from zope.component import getMultiAdapter
 
 
 class FeedViewlet(ViewletBase):
+    id = None
     index = ViewPageTemplateFile('viewlets/feed.pt')
 
     def feeds(
@@ -57,9 +58,17 @@ class FeedViewlet(ViewletBase):
             desc = ploneview.cropText(desc, length)
         return desc
 
+    def title(self):
+        if self.context.get(self.id):
+            return self.context[self.id].Title()
+
+    def url(self):
+        if self.context.get(self.id):
+            return self.context[self.id].absolute_url()
+
 class BusinessTopicsViewlet(FeedViewlet):
 
-    title = 'Business Topics'
+    id = 'topics'
 
     def items(self):
         portal_state = getMultiAdapter(
@@ -75,7 +84,7 @@ class BusinessTopicsViewlet(FeedViewlet):
 
 class NewsViewlet(FeedViewlet):
 
-    title = 'News'
+    id = 'news'
 
     def items(self):
         return self.feeds(
@@ -85,7 +94,7 @@ class NewsViewlet(FeedViewlet):
 
 class ApplicationReleasesViewlet(FeedViewlet):
 
-    title = 'Application Releases'
+    id = 'applications'
 
     def items(self):
         portal_state = getMultiAdapter(
