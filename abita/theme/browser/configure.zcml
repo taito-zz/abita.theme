@@ -1,7 +1,7 @@
 <configure
-    xmlns="http://namespaces.zope.org/zope"
-    xmlns:browser="http://namespaces.zope.org/browser"
-    i18n_domain="abita.theme">
+  i18n_domain="abita.theme"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  xmlns="http://namespaces.zope.org/zope">
 
   <!-- Viewlet manager for top page -->
   <browser:viewletManager
@@ -10,26 +10,6 @@
     name="abita.top.manager"
     permission="zope2.View"
     provides=".interfaces.ITopViewletManager"
-    />
-
-  <!-- Business Topics -->
-  <browser:viewlet
-    class=".viewlets.BusinessTopicsViewlet"
-    for="*"
-    layer=".interfaces.IAbitaThemeLayer"
-    manager=".interfaces.ITopViewletManager"
-    name="abita.business.topics"
-    permission="zope2.View"
-    />
-
-  <!-- News -->
-  <browser:viewlet
-    class=".viewlets.NewsViewlet"
-    for="*"
-    layer=".interfaces.IAbitaThemeLayer"
-    manager=".interfaces.ITopViewletManager"
-    name="abita.news"
-    permission="zope2.View"
     />
 
   <!-- Application Releases -->
