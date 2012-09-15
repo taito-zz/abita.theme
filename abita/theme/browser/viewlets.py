@@ -61,6 +61,7 @@ class FeedViewlet(ViewletBase):
         if self.context.get(self.id):
             return self.context[self.id].absolute_url()
 
+
 class ApplicationReleasesViewlet(FeedViewlet):
 
     id = 'applications'

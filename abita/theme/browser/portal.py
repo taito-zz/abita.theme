@@ -1,6 +1,6 @@
-from five import grok
-from abita.theme.browser.interfaces import IAbitaThemeLayer
 from Products.CMFCore.interfaces._content import ISiteRoot
+from abita.theme.browser.interfaces import IAbitaThemeLayer
+from five import grok
 
 
 class View(grok.View):

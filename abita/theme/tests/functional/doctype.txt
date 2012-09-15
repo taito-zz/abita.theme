@@ -3,10 +3,3 @@ Check that the theme contains the correct HTML5 doctype.
     >>> browser.open('/')
     >>> print browser.contents.strip().splitlines()[0]
     <!doctype html>
-
-Accessing an unthemed page will return the default HTML4 doctype.
-
-    >>> browser.login(SITE_OWNER_NAME, SITE_OWNER_PASSWORD)
-    >>> browser.open('/@@theming-controlpanel')
-    >>> print browser.contents.strip().splitlines()[0]
-    <!DOCTYPE html PUBLIC

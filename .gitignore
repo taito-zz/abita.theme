@@ -1,9 +1,10 @@
-abita/theme/docs/_build/*
-abita/theme/theme_resources/less/plone/*.css
-abita/theme/theme_resources/less/theme/*.css
 *.egg-info
 *.pyc
 *.pyo
 *~
 .DS_Store
+.long-description.html
+abita/theme/docs/_build/*
+abita/theme/theme_resources/less/plone/*.css
+abita/theme/theme_resources/less/theme/*.css
 dist

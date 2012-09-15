@@ -31,18 +31,6 @@ class TestCase(IntegrationTestCase):
         self.failUnless(
             '++theme++abita.theme/css/style.css' in css_resources)
 
-    # def test_js_registry_configured(self):
-    #     js_resources = set(
-    #         getToolByName(self.portal, 'portal_javascripts').getResourceIds())
-
-    #     self.failUnless(
-    #         '++theme++abita.theme/javascript/libs/modernizr.custom.js'
-    #         in js_resources)
-    #     self.failUnless(
-    #         '++theme++abita.theme/javascript/libs/respond.min.js'
-    #         in js_resources)
-
-
     def test_theme__enabled(self):
         from zope.component import getUtility
         from plone.registry.interfaces import IRegistry
