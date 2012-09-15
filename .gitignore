@@ -7,4 +7,5 @@
 abita/theme/docs/_build/*
 abita/theme/theme_resources/less/plone/*.css
 abita/theme/theme_resources/less/theme/*.css
+build
 dist
