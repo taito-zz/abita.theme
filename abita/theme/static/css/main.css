@@ -1,0 +1,22 @@
+#visual-portal-wrapper {
+    margin: auto;
+    width: 600px;
+}
+#portal-globalnav {
+    background: none;
+    margin: 0;
+}
+#portal-globalnav li a {
+    padding: 0.5em 1em;
+    border-radius: 10px;
+    margin: 0 0 0.5em;
+}
+#portal-footer {
+    border-radius: 10px;
+}
+#portal-footer ul {
+    text-align: right;
+}
+#portal-footer li {
+    display: list-item;
+}

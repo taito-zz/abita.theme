@@ -7,12 +7,9 @@ setup(
     version='0.5',
     description="ABITA Theme",
     long_description=open("README.rst").read(),
-    # Get more strings from
-    # http://pypi.python.org/pypi?:action=list_classifiers
     classifiers=[
         "Framework :: Plone",
         "Framework :: Plone :: 4.2",
-        "Framework :: Plone :: 4.3",
         "Programming Language :: Python",
         "Programming Language :: Python :: 2.7"],
     keywords='',
@@ -25,14 +22,12 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[
+        'abita.adapter',
+        'abita.utils',
         'five.grok',
         'hexagonit.testing',
-        'plone.app.portlets',
-        'plone.app.theming',
-        'plone.app.themingplugins',
-        'plone.browserlayer',
         'setuptools',
-        'zope.i18nmessageid'],
+        'z3c.jbot'],
     entry_points="""
     # -*- Entry points: -*-
 

@@ -1,0 +1,4 @@
+<section tal:attributes="id viewlet/name">
+  <h1 tal:content="viewlet/title" />
+  <div tal:replace="structure viewlet/text" />
+</section>

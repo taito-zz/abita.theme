@@ -6,17 +6,18 @@
   xmlns:plone="http://namespaces.plone.org/plone"
   xmlns="http://namespaces.zope.org/zope">
 
-  <includeDependencies package="."/>
+  <include package="five.grok"/>
+  <include package=".browser" />
   <grok:grok package="." />
 
   <i18n:registerTranslations directory="locales" />
 
   <!-- Container for all static theme related files -->
-  <plone:static
+  <!-- <plone:static
     directory="theme_resources"
     name="abita.theme"
     type="theme"
-    />
+    /> -->
 
   <genericsetup:registerProfile
     description="Installs the abita.theme package"
@@ -25,7 +26,5 @@
     provides="Products.GenericSetup.interfaces.EXTENSION"
     title="abita.theme"
     />
-
-  <include package=".browser" />
 
 </configure>
