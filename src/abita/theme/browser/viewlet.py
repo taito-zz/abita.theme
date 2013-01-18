@@ -1,5 +1,5 @@
 # from Acquisition import aq_inner
-from Products.ATContentTypes.interfaces.document import IATDocument
+# from Products.ATContentTypes.interfaces.document import IATDocument
 # from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.interfaces.siteroot import IPloneSiteRoot
 # from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
@@ -119,12 +119,11 @@ class BaseViewlet(grok.Viewlet):
             return self.obj.CookedBody()
 
 
-class AboutViewlet(BaseViewlet):
-    name = 'about'
-    grok.name('abita.theme.about')
+# class AboutViewlet(BaseViewlet):
+#     name = 'about'
+#     grok.name('abita.theme.about')
 
 
 class ContactViewlet(BaseViewlet):
     name = 'contact'
     grok.name('abita.theme.contact')
-
