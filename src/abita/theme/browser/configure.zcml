@@ -9,23 +9,4 @@
     directory="overrides"
     layer=".interfaces.IAbitaThemeLayer" />
 
-  <!-- Viewlet manager for top page -->
-  <!-- <browser:viewletManager
-    class="plone.app.viewletmanager.manager.OrderedViewletManager"
-    layer=".interfaces.IAbitaThemeLayer"
-    name="abita.top.manager"
-    permission="zope2.View"
-    provides=".interfaces.ITopViewletManager"
-    /> -->
-
-  <!-- Application Releases -->
-  <!-- <browser:viewlet
-    class=".viewlets.ApplicationReleasesViewlet"
-    for="*"
-    layer=".interfaces.IAbitaThemeLayer"
-    manager=".interfaces.ITopViewletManager"
-    name="abita.application.releases"
-    permission="zope2.View"
-    /> -->
-
 </configure>

@@ -5,6 +5,12 @@ abita.theme
 Changelog
 ---------
 
+0.7.1 (2013-02-03)
+==================
+
+- Covered tests. [taito]
+- Tested with Plone-4.2.4. [taito]
+
 0.7 (2013-01-18)
 ================
 

@@ -7,17 +7,11 @@
   xmlns="http://namespaces.zope.org/zope">
 
   <include package="five.grok"/>
+  <include package="abita.adapter"/>
   <include package=".browser" />
   <grok:grok package="." />
 
   <i18n:registerTranslations directory="locales" />
-
-  <!-- Container for all static theme related files -->
-  <!-- <plone:static
-    directory="theme_resources"
-    name="abita.theme"
-    type="theme"
-    /> -->
 
   <genericsetup:registerProfile
     description="Installs the abita.theme package"
