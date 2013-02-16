@@ -1,0 +1,26 @@
+<configure
+  i18n_domain="abita.theme"
+  xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+  xmlns="http://namespaces.zope.org/zope">
+
+  <genericsetup:upgradeStep
+    description=""
+    destination="2"
+    handler="abita.theme.upgrades.show_path_bar"
+    profile="abita.theme:default"
+    sortkey="1"
+    source="1"
+    title="Show path bar"
+    />
+
+  <genericsetup:upgradeStep
+    description=""
+    destination="2"
+    handler="abita.theme.upgrades.reimport_viewlets"
+    profile="abita.theme:default"
+    sortkey="2"
+    source="1"
+    title="Reimport viewlets"
+    />
+
+</configure>

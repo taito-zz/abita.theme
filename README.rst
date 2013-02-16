@@ -5,6 +5,11 @@ abita.theme
 Changelog
 ---------
 
+0.8 (2013-02-16)
+================
+
+- Show path bar only to logged in members. [taito]
+
 0.7.1 (2013-02-03)
 ==================
 

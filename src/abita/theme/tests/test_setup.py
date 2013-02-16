@@ -107,6 +107,30 @@ class TestCase(IntegrationTestCase):
         resource = get_css_resource(self.portal, '++resource++abita.theme/css/extra.css')
         self.assertIsNone(resource.getTitle())
 
+    def test_metadata__version(self):
+        setup = getToolByName(self.portal, 'portal_setup')
+        self.assertEqual(
+            setup.getVersionForProfile('profile-abita.theme:default'), u'2')
+
+    def test_viewlets__hidden__plone_portalheader(self):
+        from zope.component import getUtility
+        from plone.app.viewletmanager.interfaces import IViewletSettingsStorage
+        storage = getUtility(IViewletSettingsStorage)
+        manager = "plone.portalheader"
+        skinname = "*"
+        self.assertIn(u'plone.searchbox', storage.getHidden(manager, skinname))
+
+    def test_viewlets__hidden__plone_portalfooter(self):
+        from zope.component import getUtility
+        from plone.app.viewletmanager.interfaces import IViewletSettingsStorage
+        storage = getUtility(IViewletSettingsStorage)
+        manager = "plone.portalfooter"
+        skinname = "*"
+        for viewlet in (
+            u'plone.colophon',
+            u'plone.site_actions'):
+            self.assertIn(viewlet, storage.getHidden(manager, skinname))
+
     def test_uninstall_package(self):
         installer = getToolByName(self.portal, 'portal_quickinstaller')
         installer.uninstallProducts(['abita.theme'])
