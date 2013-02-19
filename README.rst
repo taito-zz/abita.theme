@@ -5,6 +5,11 @@ abita.theme
 Changelog
 ---------
 
+0.8.1 (2013-02-19)
+==================
+
+- Updated style for documentFirstHeading and documentDescription. [taito]
+
 0.8 (2013-02-16)
 ================
 
