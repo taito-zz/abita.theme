@@ -25,21 +25,25 @@ class BaseViewlet(grok.Viewlet):
     grok.viewletmanager(TopViewletManager)
 
     @property
+    def folder(self):
+        return self.context.get(self.name)
+
+    @property
     def obj(self):
-        adapter = IBaseAdapter(self.context[self.name])
+        adapter = IBaseAdapter(self.folder)
         return adapter.get_object(depth=1)
 
     @property
     def title(self):
         if self.obj:
             return self.obj.Title()
-        return self.context[self.name].Title()
+        return self.folder.Title()
 
     @property
     def description(self):
         if self.obj:
             return self.obj.Description()
-        return self.context[self.name].Description()
+        return self.folder.Description()
 
     @property
     def text(self):

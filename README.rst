@@ -2,8 +2,15 @@
 abita.theme
 ===========
 
+abita.theme is for theming ABITA site.
+
 Changelog
 ---------
+
+0.9.1 (2013-02-22)
+==================
+
+- Fixed error when the about folder does not exist. [taito]
 
 0.9 (2013-02-22)
 ================

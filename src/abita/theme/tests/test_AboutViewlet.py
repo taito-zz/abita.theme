@@ -24,6 +24,10 @@ class TestAboutViewlet(IntegrationTestCase):
         from abita.theme.browser.viewlet import AboutViewlet
         return AboutViewlet(self.portal, TestRequest(), manager=None, view=None)
 
+    def test_folder(self):
+        instance = self.create_instance()
+        self.assertEqual(instance.folder, self.portal['about'])
+
     def test_obj__folder(self):
         instance = self.create_instance()
         self.assertIsNone(instance.obj)
