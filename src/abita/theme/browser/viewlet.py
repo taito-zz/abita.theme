@@ -47,6 +47,6 @@ class BaseViewlet(grok.Viewlet):
             return self.obj.CookedBody()
 
 
-class ContactViewlet(BaseViewlet):
-    name = 'contact'
-    grok.name('abita.theme.contact')
+class AboutViewlet(BaseViewlet):
+    name = 'about'
+    grok.name('abita.theme.about')

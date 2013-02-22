@@ -5,6 +5,12 @@ abita.theme
 Changelog
 ---------
 
+0.9 (2013-02-22)
+================
+
+- Removed ContactViewlet. [taito]
+- Added AboutViewlet. [taito]
+
 0.8.1 (2013-02-19)
 ==================
 

@@ -1,60 +1,11 @@
 <div
-  i18n:domain="plone"
+  i18n:domain="abita.theme"
   id="portal-footer"
   metal:define-macro="portal_footer">
-  <ul>
-    <li>
-      &copy;2004-<tal:year tal:content="view/year" /> by
-      <a
-        tal:define="portal context/@@plone_portal_state/portal"
-        tal:attributes="href view/site_url; title string:${portal/title} ${portal/description};"
-        tal:content="portal/title"
-        href="http://abita.fi/"
-        title="ABITA Open Source Technologies &amp;&amp; Open Businesses"
-        >
-        ABITA
-      </a>
-    </li>
-    <li>
-      Powered by
-      <a
-        href="http://plone.org/"
-        target="_blank"
-        title="Plone Open Source CMS/WCM."
-        >
-          Plone
-      </a> &amp;
-      <a
-        href="http://python.org/"
-        target="_blank"
-        title="Python Open Source Scripting Language"
-        >
-          Python
-      </a> on
-      <a
-        href="http://www.ubuntu.com/"
-        target="_blank"
-        title="Ubuntu Open Source Operating System"
-        >
-          Ubuntu
-      </a>
-    </li>
-    <li>
-      Develped with
-      <a
-        href="http://www.mozilla.com/firefox/"
-        target="_blank"
-        title="Firefox Open Source Browser"
-        >
-          Firefox
-      </a> &amp;
-      <a
-        href="http://www.chromium.org/"
-        target="_blank"
-        title="Chromium Open Source Browser"
-        >
-          Chromium
-      </a>
-    </li>
-  </ul>
+  <div class="footer-part">
+    ABITA OY<br/>
+    Karhutie 24 A 2<br/>
+    00800 Helsinki Finland<br/>
+    TEL: +358 (0)45 633 0215
+  </div>
 </div>

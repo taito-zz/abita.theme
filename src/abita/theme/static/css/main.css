@@ -40,12 +40,10 @@ h1 {
 
 #portal-footer {
     border-radius: 10px;
-}
-#portal-footer ul {
+    color: #333;
+    line-height: 1.2em;
+    padding: 1em 3em;
     text-align: right;
-}
-#portal-footer li {
-    display: list-item;
 }
 
 @media screen and (max-width: 600px) {
