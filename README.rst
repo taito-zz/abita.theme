@@ -7,6 +7,11 @@ abita.theme is for theming ABITA site.
 Changelog
 ---------
 
+0.10 (2013-02-24)
+=================
+
+-Moved files, which could be shared at multiple sites, to abita.basetheme package. [taito]
+
 0.9.1 (2013-02-22)
 ==================
 
