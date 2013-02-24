@@ -6,8 +6,7 @@
   xmlns:plone="http://namespaces.plone.org/plone"
   xmlns="http://namespaces.zope.org/zope">
 
-  <include package="five.grok"/>
-  <include package="abita.adapter"/>
+  <include package="abita.basetheme"/>
   <include package=".browser" />
   <include file="upgrades.zcml"/>
   <grok:grok package="." />

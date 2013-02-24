@@ -23,12 +23,8 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[
-        'abita.adapter',
-        'abita.utils',
-        'five.grok',
-        'hexagonit.testing',
-        'setuptools',
-        'z3c.jbot'],
+        'abita.basetheme',
+        'setuptools'],
     entry_points="""
     # -*- Entry points: -*-
 
