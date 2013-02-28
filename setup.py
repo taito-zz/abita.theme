@@ -24,7 +24,8 @@ setup(
     zip_safe=False,
     install_requires=[
         'abita.basetheme',
-        'setuptools'],
+        'setuptools',
+        'z3c.jbot'],
     entry_points="""
     # -*- Entry points: -*-
 
