@@ -10,14 +10,6 @@
 #content h1.documentFirstHeading {
     border-bottom: 0.2em solid #003366;
     border-left: 0.4em solid #fb8b00;
-    line-height: 1.1em;
-    margin: 0 0 0.4em;
-    padding: 0.1em 0 0 0.2em;
-}
-#content .documentDescription,
-#content #description {
-    font: normal 1em "Helvetica Neue",Arial,FreeSans,sans-serif;
-    margin: 0 0 0.7em;
 }
 
 @media screen and (max-width: 600px) {
