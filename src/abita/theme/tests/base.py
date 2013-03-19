@@ -1,9 +1,13 @@
-"""Base module for unittesting"""
+from abita.basetheme.tests.base import IntegrationTestCase as BaseIntegrationTestCase
 from plone.app.testing import FunctionalTesting
 from plone.app.testing import IntegrationTesting
 from plone.app.testing import PLONE_FIXTURE
 from plone.app.testing import PloneSandboxLayer
+from zope.annotation.interfaces import IAttributeAnnotatable
+from zope.interface import directlyProvides
+from zope.publisher.browser import TestRequest
 
+import mock
 import unittest
 
 
@@ -33,10 +37,18 @@ FUNCTIONAL_TESTING = FunctionalTesting(
     bases=(FIXTURE,), name="AbitaThemeLayer:Functional")
 
 
-class IntegrationTestCase(unittest.TestCase):
+class IntegrationTestCase(BaseIntegrationTestCase):
     """Base class for integration tests."""
 
     layer = INTEGRATION_TESTING
+
+    def create_view(self, view, context=None):
+        if context is None:
+            context = self.portal
+        request = TestRequest()
+        directlyProvides(request, IAttributeAnnotatable)
+        request.set = mock.Mock()
+        return view(context, request)
 
 
 class FunctionalTestCase(unittest.TestCase):

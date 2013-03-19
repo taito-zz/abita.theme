@@ -22,3 +22,8 @@ def show_path_bar(context, logger=None):
 def reimport_viewlets(context, logger=None):
     """Reimport viewlets"""
     reimport_profile(context, PROFILE_ID, 'viewlets')
+
+
+def reimport_typeinfo(context):
+    """Update typeinfo"""
+    reimport_profile(context, PROFILE_ID, 'typeinfo')

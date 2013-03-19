@@ -1,50 +1,48 @@
-# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
-# SOME DESCRIPTIVE TITLE.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: Plone\n"
 "POT-Creation-Date: 2013-03-19 20:39+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2012-08-13 23:44+0900\n"
+"Last-Translator: Taito Horiuchi <taito.horiuchi@abita.fi>\n"
+"Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0\n"
-"Language-Code: en\n"
-"Language-Name: English\n"
-"Preferred-Encodings: utf-8 latin1\n"
+"Language-Code: ja\n"
+"Language-Name: Japanese\n"
+"Preferred-Encodings: utf-8\n"
 "Domain: abita.theme\n"
+"X-Is-Fallback-For: ja-jp\n"
 
 #: ./browser/templates/work-history.pt:10
 msgid "ABITA's major works"
-msgstr ""
+msgstr "ABITAの主な事業実績"
 
 #: ./browser/templates/work-history.pt:15
 msgid "Client"
-msgstr ""
+msgstr "クライアント"
 
 #: ./browser/templates/work-history.pt:16
 msgid "Description of work"
-msgstr ""
+msgstr "仕事内容"
 
 #: ./browser/templates/work-history.pt:14
 msgid "Year"
-msgstr ""
+msgstr "西暦"
 
 #. Default: "ABITA LLC <br /> Mitakedai 21-12-307 Aoba-ku<br /> Yokohama 227-0047 Japan<br /> TEL: +81 (0)45 974 2100"
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:5
 msgid "address-japan"
-msgstr ""
+msgstr "合同会社アビタ<br />〒227-0047<br />横浜市青葉区みたけ台21-12-307<br />TEL&FAX: 045-974-2100"
 
 #. Default: "&gt;&gt;Details"
 #: ./browser/templates/work-history.pt:27
 msgid "details"
-msgstr ""
+msgstr "&gt;&gt;詳しく"
 
 #. Default: "ABITA's major works from 2004 to ${year}"
 #: ./browser/templates/work-history.pt:11
 msgid "major-works-from-2004"
-msgstr ""
+msgstr "2004−${year}年におけるABITAの主な事業実績"
 

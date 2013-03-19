@@ -114,7 +114,13 @@ class TestCase(IntegrationTestCase):
     def test_metadata__version(self):
         setup = getToolByName(self.portal, 'portal_setup')
         self.assertEqual(
-            setup.getVersionForProfile('profile-abita.theme:default'), u'2')
+            setup.getVersionForProfile('profile-abita.theme:default'), u'3')
+
+    def test_types__Folder(self):
+        types = getToolByName(self.portal, 'portal_types')
+        methods = ['work-history']
+        for method in methods:
+            self.assertIn(method, types.getTypeInfo('Folder').getProperty('view_methods'))
 
     def test_viewlets__hidden__plone_portalheader(self):
         from zope.component import getUtility

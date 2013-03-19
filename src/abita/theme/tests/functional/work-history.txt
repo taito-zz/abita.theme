@@ -1,0 +1,52 @@
+Log in as Manager::
+
+    >>> browser.login(TEST_USER_NAME, TEST_USER_PASSWORD)
+
+Go to folder/@@work-history::
+
+    >>> browser.open('/folder/@@work-history')
+
+    >>> print browser.bycss('.documentFirstHeading')
+    --- 1 ---
+    <h1 id="parent-fieldname-title" class="documentFirstHeading kssattr-atfieldname-title kssattr-templateId-kss_generic_macros kssattr-macro-title-field-view">
+    F&#246;lder
+    </h1>
+
+    >>> print browser.bycss('.documentDescription')
+    --- 1 ---
+    <div id="parent-fieldname-description" class="documentDescription kssattr-atfieldname-description kssattr-templateId-kss_generic_macros kssattr-macro-description-field-view">
+    Description of F&#246;lder
+    </div>
+
+    >>> print browser.bycss('.listing')
+
+Add event under folder::
+
+    >>> browser.open('/folder/createObject?type_name=Event')
+    >>> browser.getControl(name="title").value = '€vent1'
+    >>> browser.getControl(name="description").value = 'Description of €vent1'
+    >>> browser.getControl(name="location").value = 'Tökyö'
+    >>> browser.getControl(name="startDate_year").value = ['2010']
+    >>> browser.getControl(name="endDate_year").value = ['2010']
+    >>> browser.getControl(name="eventUrl").value = 'http://abita.fi/'
+    >>> browser.getControl(name="contactName").value = 'Clıent'
+    >>> browser.getControl(name="form.button.save").click()
+
+Go to folder/@@work-history::
+
+    >>> browser.open('/folder/@@work-history')
+    >>> print browser.bycss('.listing')
+    --- 1 ---
+    <table class="grid listing" summary="ABITA's major works"><caption>ABITA's major works from 2004 to 2013</caption>
+    <thead><tr><th>Year</th>
+    <th>Client</th>
+    <th>Description of work</th>
+    </tr></thead><tbody><tr><td>2010</td>
+    <td>
+    <a href="http://abita.fi/">Cl&#305;ent</a>
+    </td>
+    <td>
+    Description of &#8364;vent1
+    <a class="details" href="http://nohost/plone/folder/20acvent1">&gt;&gt;Details</a>
+    </td>
+    </tr></tbody></table>

@@ -2,6 +2,12 @@
   i18n:domain="abita.theme"
   id="portal-footer"
   metal:define-macro="portal_footer">
+  <div class="footer-part" i18n:translate="address-japan">
+    ABITA LLC <br/>
+    Mitakedai 21-12-307 Aoba-ku<br />
+    Yokohama 227-0047 Japan<br/>
+    TEL: +81 (0)45 974 2100
+  </div>
   <div class="footer-part">
     ABITA OY<br/>
     Karhutie 24 A 2<br/>

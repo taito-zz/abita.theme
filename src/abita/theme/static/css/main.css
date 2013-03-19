@@ -1,3 +1,7 @@
+h1, h2, h3, h4, h5, h6 {
+    color: #444444;
+}
+
 #visual-portal-wrapper {
     margin: auto;
     width: 600px;
@@ -9,8 +13,13 @@
 }
 #content h1.documentFirstHeading {
     border-bottom: 0.2em solid #003366;
-    border-left: 0.4em solid #fb8b00;
+    border-left: 0.4em solid #006c00;
 }
+/* Footer */
+#portal-footer{
+    padding: 1em;
+}
+
 
 @media screen and (max-width: 600px) {
     #visual-portal-wrapper {

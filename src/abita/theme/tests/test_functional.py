@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from abita.theme.tests.base import FUNCTIONAL_TESTING
 from hexagonit.testing.browser import Browser
 from plone.app.testing import TEST_USER_ID
@@ -25,24 +26,22 @@ CHECKER = renormalizing.RENormalizing([
 
 def setUp(self):
     layer = self.globs['layer']
-    # Update global variables within the tests.
+    browser = Browser(layer['app'])
+    portal = layer['portal']
     self.globs.update({
-        'portal': layer['portal'],
-        'portal_url': layer['portal'].absolute_url(),
-        'browser': Browser(layer['app']),
         'TEST_USER_NAME': TEST_USER_NAME,
         'TEST_USER_PASSWORD': TEST_USER_PASSWORD,
+        'browser': browser,
     })
 
-    portal = self.globs['portal']
-    browser = self.globs['browser']
-    portal_url = self.globs['portal_url']
-    browser.setBaseUrl(portal_url)
-
+    browser.setBaseUrl(portal.absolute_url())
     browser.handleErrors = True
     portal.error_log._ignored_exceptions = ()
-
     setRoles(portal, TEST_USER_ID, ['Manager'])
+
+    # Create Földer
+    folder = portal[portal.invokeFactory('Folder', 'folder', title="Földer", description="Description of Földer")]
+    folder.reindexObject()
 
     transaction.commit()
 
@@ -73,4 +72,6 @@ def DocFileSuite(testfile, flags=FLAGS, setUp=setUp, layer=FUNCTIONAL_TESTING):
 
 
 def test_suite():
-    return unittest.TestSuite([DocFileSuite('functional/browser.txt')])
+    return unittest.TestSuite([
+        DocFileSuite('functional/browser.txt'),
+        DocFileSuite('functional/work-history.txt')])
