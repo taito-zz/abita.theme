@@ -7,6 +7,12 @@ abita.theme is for theming ABITA site.
 Changelog
 ---------
 
+0.12 (2013-03-19)
+=================
+
+- Updated footer, logo and added templates for work history. [taito]
+- Tested with Plone-4.2.5. [taito]
+
 0.11.1 (2013-03-01)
 ===================
 
