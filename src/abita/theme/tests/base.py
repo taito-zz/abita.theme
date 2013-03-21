@@ -3,11 +3,11 @@ from plone.app.testing import FunctionalTesting
 from plone.app.testing import IntegrationTesting
 from plone.app.testing import PLONE_FIXTURE
 from plone.app.testing import PloneSandboxLayer
-from zope.annotation.interfaces import IAttributeAnnotatable
-from zope.interface import directlyProvides
-from zope.publisher.browser import TestRequest
+# from zope.annotation.interfaces import IAttributeAnnotatable
+# from zope.interface import directlyProvides
+# from zope.publisher.browser import TestRequest
 
-import mock
+# import mock
 import unittest
 
 
@@ -42,13 +42,13 @@ class IntegrationTestCase(BaseIntegrationTestCase):
 
     layer = INTEGRATION_TESTING
 
-    def create_view(self, view, context=None):
-        if context is None:
-            context = self.portal
-        request = TestRequest()
-        directlyProvides(request, IAttributeAnnotatable)
-        request.set = mock.Mock()
-        return view(context, request)
+    # def create_view(self, view, context=None):
+    #     if context is None:
+    #         context = self.portal
+    #     request = TestRequest()
+    #     directlyProvides(request, IAttributeAnnotatable)
+    #     request.set = mock.Mock()
+    #     return view(context, request)
 
 
 class FunctionalTestCase(unittest.TestCase):

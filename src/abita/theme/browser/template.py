@@ -1,8 +1,8 @@
 from Products.ATContentTypes.interfaces.event import IATEvent
 from Products.ATContentTypes.interfaces.folder import IATFolder
 from abita.theme.browser.interfaces import IAbitaThemeLayer
+from abita.theme.interfaces import IEventAdapter
 from collective.base.interfaces import IAdapter
-from datetime import datetime
 from five import grok
 
 grok.templatedir('templates')
@@ -34,23 +34,15 @@ class WorkHistoryView(BaseFolderView):
                 'client': item.contactName,
                 'client_url': item.eventUrl,
                 'description': item.Description(),
+                'title': item.Title(),
                 'url': item.getURL(),
-                'year': self._year(item),
+                'year': IEventAdapter(item).year(),
             })
         return res
 
     def year(self):
-        """Returns current YEAR"""
-        return datetime.now().year
-
-    def _year(self, item):
-        """Returns year by evaluating start and end date"""
-        start_year = item.startDate.year()
-        end_year = item.endDate.year()
-        if start_year == end_year:
-            return end_year
-        else:
-            return '{} - {}'.format(start_year, end_year)
+        """Returns the newest year of works"""
+        return min([item['year'] for item in self.works()])
 
 
 class WorkHistoryEventView(BaseView):
@@ -58,3 +50,7 @@ class WorkHistoryEventView(BaseView):
     grok.context(IATEvent)
     grok.name('work-history')
     grok.template('work-history-event')
+
+    def year(self):
+        """Returns year"""
+        return IEventAdapter(self.context).year()

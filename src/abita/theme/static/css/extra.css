@@ -1,4 +1,19 @@
+section#client-year{
+    color: #666666;
+    margin: 0 0 1em;
+}
+section#client-year span#label{
+    margin: 0 0.3em 0 0;
+}
+section#client-year span#year {
+    margin: 0 0 0 0.3em;
+}
+#content a#variable {
+    color: #666666;
+    border: none;
+}
+
 .footer-part {
     display: inline-block;
-    margin: 0 2em;
+    margin: 0.5em 2em;
 }

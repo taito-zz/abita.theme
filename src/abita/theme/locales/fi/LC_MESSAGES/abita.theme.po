@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-03-19 20:39+0000\n"
+"POT-Creation-Date: 2013-03-21 18:47+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 msgid "ABITA's major works"
 msgstr ""
 
-#: ./browser/templates/work-history.pt:15
+#: ./browser/templates/work-history.pt:16
 msgid "Client"
 msgstr ""
 
-#: ./browser/templates/work-history.pt:16
+#: ./browser/templates/work-history.pt:15
 msgid "Description of work"
 msgstr ""
 
@@ -35,13 +35,18 @@ msgstr ""
 msgid "address-japan"
 msgstr ""
 
-#. Default: "&gt;&gt;Details"
-#: ./browser/templates/work-history.pt:27
-msgid "details"
-msgstr ""
-
 #. Default: "ABITA's major works from 2004 to ${year}"
 #: ./browser/templates/work-history.pt:11
 msgid "major-works-from-2004"
+msgstr ""
+
+#. Default: "<span id=\"label\">Client</span> ${client}"
+#: ./browser/templates/work-history-event.pt:13
+msgid "work-client"
+msgstr ""
+
+#. Default: "<span id=\"label\">Year</span> ${year}"
+#: ./browser/templates/work-history-event.pt:17
+msgid "work-year"
 msgstr ""
 

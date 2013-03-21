@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2013-03-19 20:39+0000\n"
+"POT-Creation-Date: 2013-03-21 18:47+0000\n"
 "PO-Revision-Date: 2012-08-13 23:44+0900\n"
 "Last-Translator: Taito Horiuchi <taito.horiuchi@abita.fi>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
@@ -19,11 +19,11 @@ msgstr ""
 msgid "ABITA's major works"
 msgstr "ABITAの主な事業実績"
 
-#: ./browser/templates/work-history.pt:15
-msgid "Client"
-msgstr "クライアント"
-
 #: ./browser/templates/work-history.pt:16
+msgid "Client"
+msgstr "依頼主"
+
+#: ./browser/templates/work-history.pt:15
 msgid "Description of work"
 msgstr "仕事内容"
 
@@ -36,13 +36,18 @@ msgstr "西暦"
 msgid "address-japan"
 msgstr "合同会社アビタ<br />〒227-0047<br />横浜市青葉区みたけ台21-12-307<br />TEL&FAX: 045-974-2100"
 
-#. Default: "&gt;&gt;Details"
-#: ./browser/templates/work-history.pt:27
-msgid "details"
-msgstr "&gt;&gt;詳しく"
-
 #. Default: "ABITA's major works from 2004 to ${year}"
 #: ./browser/templates/work-history.pt:11
 msgid "major-works-from-2004"
 msgstr "2004−${year}年におけるABITAの主な事業実績"
+
+#. Default: "<span id=\"label\">Client</span> ${client}"
+#: ./browser/templates/work-history-event.pt:13
+msgid "work-client"
+msgstr "<span id=\"label\">依頼主</span> ${client}"
+
+#. Default: "<span id=\"label\">Year</span> ${year}"
+#: ./browser/templates/work-history-event.pt:17
+msgid "work-year"
+msgstr "${year}<span id=\"label\">年</span>"
 

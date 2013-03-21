@@ -7,6 +7,11 @@ abita.theme is for theming ABITA site.
 Changelog
 ---------
 
+0.13 (2013-03-21)
+=================
+
+- Added adapter for Event. [taito]
+
 0.12 (2013-03-19)
 =================
 
