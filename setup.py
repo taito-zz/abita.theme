@@ -4,7 +4,7 @@ from setuptools import setup
 
 setup(
     name='abita.theme',
-    version='0.13.1',
+    version='0.13.2',
     description="ABITA Theme",
     long_description=open("README.rst").read(),
     classifiers=[
