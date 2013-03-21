@@ -29,7 +29,7 @@ Add event under folder::
     >>> browser.getControl(name="startDate_year").value = ['2010']
     >>> browser.getControl(name="endDate_year").value = ['2010']
     >>> browser.getControl(name="eventUrl").value = 'http://abita.fi/'
-    >>> browser.getControl(name="contactName").value = 'Clıent'
+    >>> browser.getControl(name="contactName").value = 'Clıent1'
     >>> browser.getControl(name="form.button.save").click()
 
 Go to folder/20acvent1/@@work-history::
@@ -50,8 +50,29 @@ Go to folder/20acvent1/@@work-history::
 
     >>> print browser.bycss('#client-year')
     --- 1 ---
-    <section id="client-year"><span id="client"><span id="label">Client</span> <a id="variable" href="http://abita.fi/">Cl&#305;ent</a></span>
+    <section id="client-year"><span id="client"><span id="label">Client</span> <a id="variable" href="http://abita.fi/">Cl&#305;ent1</a></span>
     <span id="year"><span id="label">Year</span> <span id="variable">2010</span></span>
+    </section>
+
+Add one more event under folder::
+
+    >>> browser.open('/folder/createObject?type_name=Event')
+    >>> browser.getControl(name="title").value = '€vent2'
+    >>> browser.getControl(name="description").value = 'Description of €vent2'
+    >>> browser.getControl(name="location").value = 'Tökyö'
+    >>> browser.getControl(name="startDate_year").value = ['2011']
+    >>> browser.getControl(name="endDate_year").value = ['2012']
+    >>> browser.getControl(name="eventUrl").value = 'http://abita.fi/'
+    >>> browser.getControl(name="contactName").value = 'Clıent2'
+    >>> browser.getControl(name="form.button.save").click()
+
+Go to folder/20acvent2/@@work-history::
+
+    >>> browser.open('/folder/20acvent2/@@work-history')
+    >>> print browser.bycss('#client-year')
+    --- 1 ---
+    <section id="client-year"><span id="client"><span id="label">Client</span> <a id="variable" href="http://abita.fi/">Cl&#305;ent2</a></span>
+    <span id="year"><span id="label">Year</span> <span id="variable">2011 - 2012</span></span>
     </section>
 
 Go to folder/@@work-history::
@@ -63,11 +84,18 @@ Go to folder/@@work-history::
     <thead><tr><th>Year</th>
     <th>Description of work</th>
     <th>Client</th>
-    </tr></thead><tbody><tr><td>2010</td>
+    </tr></thead><tbody><tr><td>2011 - 2012</td>
+    <td>
+    <a href="http://nohost/plone/folder/20acvent2">&#8364;vent2</a>
+    </td>
+    <td>
+    <a href="http://abita.fi/">Cl&#305;ent2</a>
+    </td>
+    </tr><tr><td>2010</td>
     <td>
     <a href="http://nohost/plone/folder/20acvent1">&#8364;vent1</a>
     </td>
     <td>
-    <a href="http://abita.fi/">Cl&#305;ent</a>
+    <a href="http://abita.fi/">Cl&#305;ent1</a>
     </td>
     </tr></tbody></table>

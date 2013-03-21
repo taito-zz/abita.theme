@@ -7,6 +7,11 @@ abita.theme is for theming ABITA site.
 Changelog
 ---------
 
+0.13.1 (2013-03-21)
+===================
+
+- Updated order of work history according to end date. [taito]
+
 0.13 (2013-03-21)
 =================
 

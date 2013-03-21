@@ -29,7 +29,7 @@ class WorkHistoryView(BaseFolderView):
     def works(self):
         """Returns list of dictionary of past works"""
         res = []
-        for item in IAdapter(self.context).get_content_listing(IATEvent, depth=1):
+        for item in IAdapter(self.context).get_content_listing(IATEvent, depth=1, sort_on='end', sort_order='descending'):
             res.append({
                 'client': item.contactName,
                 'client_url': item.eventUrl,
