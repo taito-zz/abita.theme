@@ -80,7 +80,7 @@ Go to folder/@@work-history::
     >>> browser.open('/folder/@@work-history')
     >>> print browser.bycss('.listing')
     --- 1 ---
-    <table class="grid listing" summary="ABITA's major works"><caption>ABITA's major works from 2004 to 2010</caption>
+    <table class="grid listing" summary="ABITA's major works"><caption>ABITA's major works from 2004 to 2012</caption>
     <thead><tr><th>Year</th>
     <th>Description of work</th>
     <th>Client</th>

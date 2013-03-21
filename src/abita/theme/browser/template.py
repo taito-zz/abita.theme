@@ -37,12 +37,13 @@ class WorkHistoryView(BaseFolderView):
                 'title': item.Title(),
                 'url': item.getURL(),
                 'year': IEventAdapter(item).year(),
+                'end': item.endDate,
             })
         return res
 
     def year(self):
         """Returns the newest year of works"""
-        return min([item['year'] for item in self.works()])
+        return self.works()[0]['end'].year()
 
 
 class WorkHistoryEventView(BaseView):
