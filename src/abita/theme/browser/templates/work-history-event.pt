@@ -8,14 +8,28 @@
   <body>
     <metal:text fill-slot="content-core">
       <section id="client-year">
-        <span id="client" i18n:translate="work-client">
+        <span id="client" i18n:translate="work-client" tal:condition="context/eventUrl">
           <span id="label">Client</span>
-          <a id="variable" i18n:name="client" tal:attributes="href context/eventUrl" tal:content="context/contactName" />
+          <a
+            id="variable"
+            i18n:name="client"
+            tal:attributes="href context/eventUrl"
+            tal:content="context/contactName"
+            />
+        </span>
+        <span id="client" i18n:translate="work-client" tal:condition="not: context/eventUrl">
+          <span id="label">Client</span>
+          <span
+            id="variable"
+            i18n:name="client"
+            tal:content="context/contactName"
+            />
         </span>
         <span id="year" i18n:translate="work-year">
           <span id="label" >Year</span>
           <span id="variable" i18n:name="year" tal:content="view/year" />
         </span>
+        <span id="location" tal:content="context/location" />
       </section>
       <div tal:replace="structure context/getText" />
     </metal:text>

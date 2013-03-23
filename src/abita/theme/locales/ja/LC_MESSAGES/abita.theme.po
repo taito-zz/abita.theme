@@ -39,7 +39,7 @@ msgstr "合同会社アビタ<br />〒227-0047<br />横浜市青葉区みたけ�
 #. Default: "ABITA's major works from 2004 to ${year}"
 #: ./browser/templates/work-history.pt:11
 msgid "major-works-from-2004"
-msgstr "2004−${year}年におけるABITAの主な事業実績"
+msgstr "ABITAの主な事業実績（2004−${year}年）"
 
 #. Default: "<span id=\"label\">Client</span> ${client}"
 #: ./browser/templates/work-history-event.pt:13

@@ -23,7 +23,8 @@
               <a tal:attributes="href item/url" tal:content="item/title" />
             </td>
             <td>
-              <a tal:attributes="href item/client_url" tal:content="item/client" />
+              <a tal:attributes="href item/client_url" tal:condition="item/client_url" tal:content="item/client" />
+              <span tal:condition="not: item/client_url" tal:replace="item/client" />
             </td>
           </tr>
         </tbody>

@@ -25,7 +25,7 @@ Add event under folder::
     >>> browser.open('/folder/createObject?type_name=Event')
     >>> browser.getControl(name="title").value = '€vent1'
     >>> browser.getControl(name="description").value = 'Description of €vent1'
-    >>> browser.getControl(name="location").value = 'Tökyö'
+    >>> browser.getControl(name="location").value = 'Tökyö1'
     >>> browser.getControl(name="startDate_year").value = ['2010']
     >>> browser.getControl(name="endDate_year").value = ['2010']
     >>> browser.getControl(name="eventUrl").value = 'http://abita.fi/'
@@ -52,6 +52,7 @@ Go to folder/20acvent1/@@work-history::
     --- 1 ---
     <section id="client-year"><span id="client"><span id="label">Client</span> <a id="variable" href="http://abita.fi/">Cl&#305;ent1</a></span>
     <span id="year"><span id="label">Year</span> <span id="variable">2010</span></span>
+    <span id="location">T&#246;ky&#246;1</span>
     </section>
 
 Add one more event under folder::
@@ -59,7 +60,7 @@ Add one more event under folder::
     >>> browser.open('/folder/createObject?type_name=Event')
     >>> browser.getControl(name="title").value = '€vent2'
     >>> browser.getControl(name="description").value = 'Description of €vent2'
-    >>> browser.getControl(name="location").value = 'Tökyö'
+    >>> browser.getControl(name="location").value = 'Tökyö2'
     >>> browser.getControl(name="startDate_year").value = ['2011']
     >>> browser.getControl(name="endDate_year").value = ['2012']
     >>> browser.getControl(name="eventUrl").value = 'http://abita.fi/'
@@ -73,6 +74,7 @@ Go to folder/20acvent2/@@work-history::
     --- 1 ---
     <section id="client-year"><span id="client"><span id="label">Client</span> <a id="variable" href="http://abita.fi/">Cl&#305;ent2</a></span>
     <span id="year"><span id="label">Year</span> <span id="variable">2011 - 2012</span></span>
+    <span id="location">T&#246;ky&#246;2</span>
     </section>
 
 Go to folder/@@work-history::

@@ -7,6 +7,12 @@ abita.theme is for theming ABITA site.
 Changelog
 ---------
 
+0.13.3 (2013-03-23)
+===================
+
+- Fixed work history client link. [taito]
+- Added country to work history view. [taito]
+
 0.13.2 (2013-03-21)
 ===================
 
