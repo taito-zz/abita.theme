@@ -8,13 +8,13 @@ Go to folder/@@work-history::
 
     >>> print browser.bycss('.documentFirstHeading')
     --- 1 ---
-    <h1 id="parent-fieldname-title" class="documentFirstHeading kssattr-atfieldname-title kssattr-templateId-kss_generic_macros kssattr-macro-title-field-view">
+    <h1 id="parent-fieldname-title" class="documentFirstHeading">
     F&#246;lder
     </h1>
 
     >>> print browser.bycss('.documentDescription')
     --- 1 ---
-    <div id="parent-fieldname-description" class="documentDescription kssattr-atfieldname-description kssattr-templateId-kss_generic_macros kssattr-macro-description-field-view">
+    <div id="parent-fieldname-description" class="documentDescription">
     Description of F&#246;lder
     </div>
 
@@ -37,21 +37,27 @@ Go to folder/20acvent1/@@work-history::
     >>> browser.open('/folder/20acvent1/@@work-history')
     >>> print browser.bycss('.documentFirstHeading')
     --- 1 ---
-    <h1 id="parent-fieldname-title" class="documentFirstHeading kssattr-atfieldname-title kssattr-templateId-kss_generic_macros kssattr-macro-title-field-view">
+    <h1 id="parent-fieldname-title" class="documentFirstHeading">
     &#8364;vent1
     </h1>
 
 
     >>> print browser.bycss('.documentDescription')
     --- 1 ---
-    <div id="parent-fieldname-description" class="documentDescription kssattr-atfieldname-description kssattr-templateId-kss_generic_macros kssattr-macro-description-field-view">
+    <div id="parent-fieldname-description" class="documentDescription">
     Description of &#8364;vent1
     </div>
 
     >>> print browser.bycss('#client-year')
     --- 1 ---
-    <section id="client-year"><span id="client"><span id="label">Client</span> <a id="variable" href="http://abita.fi/">Cl&#305;ent1</a></span>
-    <span id="year"><span id="label">Year</span> <span id="variable">2010</span></span>
+    <section id="client-year"><span id="client">
+    <span id="label">Client</span>
+    <a id="variable" href="http://abita.fi/">Cl&#305;ent1</a>
+    </span>
+    <span id="year">
+    <span id="label">Year</span>
+    <span id="variable">2010</span>
+    </span>
     <span id="location">T&#246;ky&#246;1</span>
     </section>
 
@@ -72,14 +78,21 @@ Go to folder/20acvent2/@@work-history::
     >>> browser.open('/folder/20acvent2/@@work-history')
     >>> print browser.bycss('#client-year')
     --- 1 ---
-    <section id="client-year"><span id="client"><span id="label">Client</span> <a id="variable" href="http://abita.fi/">Cl&#305;ent2</a></span>
-    <span id="year"><span id="label">Year</span> <span id="variable">2011 - 2012</span></span>
+    <section id="client-year"><span id="client">
+    <span id="label">Client</span>
+    <a id="variable" href="http://abita.fi/">Cl&#305;ent2</a>
+    </span>
+    <span id="year">
+    <span id="label">Year</span>
+    <span id="variable">2011 - 2012</span>
+    </span>
     <span id="location">T&#246;ky&#246;2</span>
     </section>
 
 Go to folder/@@work-history::
 
     >>> browser.open('/folder/@@work-history')
+
     >>> print browser.bycss('.listing')
     --- 1 ---
     <table class="grid listing" summary="ABITA's major works"><caption>ABITA's major works from 2004 to 2012</caption>

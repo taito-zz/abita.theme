@@ -1,14 +1,15 @@
 from abita.theme.interfaces import IEventAdapter
-from five import grok
 from plone.memoize.instance import memoize
-from zope.interface import Interface
+from zope.interface import implements
 
 
-class EventAdapter(grok.Adapter):
+class EventAdapter(object):
     """Adapter for Event"""
 
-    grok.context(Interface)
-    grok.provides(IEventAdapter)
+    implements(IEventAdapter)
+
+    def __init__(self, context):
+        self.context = context
 
     @memoize
     def year(self):

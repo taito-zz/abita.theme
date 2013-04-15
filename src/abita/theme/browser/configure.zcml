@@ -9,4 +9,20 @@
     directory="overrides"
     layer=".interfaces.IAbitaThemeLayer" />
 
+  <browser:page
+    class=".template.WorkHistoryView"
+    for="Products.ATContentTypes.interfaces.folder.IATFolder"
+    layer=".interfaces.IAbitaThemeLayer"
+    name="work-history"
+    permission="zope2.View"
+    />
+
+  <browser:page
+    class=".template.WorkHistoryEventView"
+    for="Products.ATContentTypes.interfaces.event.IATEvent"
+    layer=".interfaces.IAbitaThemeLayer"
+    name="work-history"
+    permission="zope2.View"
+    />
+
 </configure>

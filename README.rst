@@ -7,6 +7,13 @@ abita.theme is for theming ABITA site.
 Changelog
 ---------
 
+0.14 (2013-04-15)
+=================
+
+- Moved test package to extras_require. [taito]
+- Removed dependency from five.grok. [taito]
+- Tested with Plone-4.3. [taito]
+
 0.13.3 (2013-03-23)
 ===================
 

@@ -1,30 +1,14 @@
 from Products.ATContentTypes.interfaces.event import IATEvent
-from Products.ATContentTypes.interfaces.folder import IATFolder
-from abita.theme.browser.interfaces import IAbitaThemeLayer
+from Products.Five import BrowserView
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from abita.theme.interfaces import IEventAdapter
 from collective.base.interfaces import IAdapter
-from five import grok
-
-grok.templatedir('templates')
 
 
-class BaseView(grok.View):
-    """Base view"""
-    grok.baseclass()
-    grok.layer(IAbitaThemeLayer)
-    grok.require('zope2.View')
-
-
-class BaseFolderView(BaseView):
-    """Base view for Folder"""
-    grok.baseclass()
-    grok.context(IATFolder)
-
-
-class WorkHistoryView(BaseFolderView):
+class WorkHistoryView(BrowserView):
     """View for work history"""
-    grok.name('work-history')
-    grok.template('work-history')
+
+    __call__ = ViewPageTemplateFile('templates/work-history.pt')
 
     def works(self):
         """Returns list of dictionary of past works"""
@@ -46,11 +30,10 @@ class WorkHistoryView(BaseFolderView):
         return self.works()[0]['end'].year()
 
 
-class WorkHistoryEventView(BaseView):
+class WorkHistoryEventView(BrowserView):
     """View for work history for Event"""
-    grok.context(IATEvent)
-    grok.name('work-history')
-    grok.template('work-history-event')
+
+    __call__ = ViewPageTemplateFile('templates/work-history-event.pt')
 
     def year(self):
         """Returns year"""
