@@ -9,6 +9,12 @@
     directory="overrides"
     layer=".interfaces.IAbitaThemeLayer" />
 
+  <browser:resourceDirectory
+    name="abita.theme"
+    directory="static"
+    layer=".interfaces.IAbitaThemeLayer"
+    />
+
   <browser:page
     class=".template.WorkHistoryView"
     for="Products.ATContentTypes.interfaces.folder.IATFolder"
