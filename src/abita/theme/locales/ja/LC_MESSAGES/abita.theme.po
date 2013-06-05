@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2013-03-21 18:47+0000\n"
+"POT-Creation-Date: 2013-06-05 19:51+0000\n"
 "PO-Revision-Date: 2012-08-13 23:44+0900\n"
 "Last-Translator: Taito Horiuchi <taito.horiuchi@abita.fi>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
@@ -15,39 +15,26 @@ msgstr ""
 "Domain: abita.theme\n"
 "X-Is-Fallback-For: ja-jp\n"
 
-#: ./browser/templates/work-history.pt:10
-msgid "ABITA's major works"
-msgstr "ABITAの主な事業実績"
+#: ./browser/viewlet.py:101
+msgid "Recent blog"
+msgstr "最新のブログ"
 
-#: ./browser/templates/work-history.pt:16
-msgid "Client"
-msgstr "依頼主"
-
-#: ./browser/templates/work-history.pt:15
-msgid "Description of work"
-msgstr "仕事内容"
-
-#: ./browser/templates/work-history.pt:14
-msgid "Year"
-msgstr "西暦"
+#: ./browser/viewlet.py:112
+msgid "Recent work"
+msgstr "最近の仕事"
 
 #. Default: "ABITA LLC <br /> Mitakedai 21-12-307 Aoba-ku<br /> Yokohama 227-0047 Japan<br /> TEL: +81 (0)45 974 2100"
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:5
 msgid "address-japan"
 msgstr "合同会社アビタ<br />〒227-0047<br />横浜市青葉区みたけ台21-12-307<br />TEL&FAX: 045-974-2100"
 
-#. Default: "ABITA's major works from 2004 to ${year}"
-#: ./browser/templates/work-history.pt:11
-msgid "major-works-from-2004"
-msgstr "ABITAの主な事業実績（2004−${year}年）"
-
 #. Default: "<span id=\"label\">Client</span> ${client}"
-#: ./browser/templates/work-history-event.pt:13
+#: ./browser/viewlets/work-history-event.pt:5
 msgid "work-client"
 msgstr "<span id=\"label\">依頼主</span> ${client}"
 
 #. Default: "<span id=\"label\">Year</span> ${year}"
-#: ./browser/templates/work-history-event.pt:17
+#: ./browser/viewlets/work-history-event.pt:22
 msgid "work-year"
 msgstr "${year}<span id=\"label\">年</span>"
 

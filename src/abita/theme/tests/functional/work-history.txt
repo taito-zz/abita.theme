@@ -8,15 +8,11 @@ Go to folder/@@work-history::
 
     >>> print browser.bycss('.documentFirstHeading')
     --- 1 ---
-    <h1 id="parent-fieldname-title" class="documentFirstHeading">
-    F&#246;lder
-    </h1>
+    <h1 class="documentFirstHeading">F&#246;lder</h1>
 
     >>> print browser.bycss('.documentDescription')
     --- 1 ---
-    <div id="parent-fieldname-description" class="documentDescription">
-    Description of F&#246;lder
-    </div>
+    <div class="documentDescription">Description of F&#246;lder</div>
 
     >>> print browser.bycss('.listing')
 
@@ -37,16 +33,11 @@ Go to folder/20acvent1/@@work-history::
     >>> browser.open('/folder/20acvent1/@@work-history')
     >>> print browser.bycss('.documentFirstHeading')
     --- 1 ---
-    <h1 id="parent-fieldname-title" class="documentFirstHeading">
-    &#8364;vent1
-    </h1>
-
+    <h1 class="documentFirstHeading">&#8364;vent1</h1>
 
     >>> print browser.bycss('.documentDescription')
     --- 1 ---
-    <div id="parent-fieldname-description" class="documentDescription">
-    Description of &#8364;vent1
-    </div>
+    <div class="documentDescription">Description of &#8364;vent1</div>
 
     >>> print browser.bycss('#client-year')
     --- 1 ---
@@ -114,3 +105,5 @@ Go to folder/@@work-history::
     <a href="http://abita.fi/">Cl&#305;ent1</a>
     </td>
     </tr></tbody></table>
+
+    # >>> browser.openBrowser()

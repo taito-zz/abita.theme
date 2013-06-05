@@ -114,7 +114,7 @@ class TestCase(IntegrationTestCase):
     def test_metadata__version(self):
         setup = getToolByName(self.portal, 'portal_setup')
         self.assertEqual(
-            setup.getVersionForProfile('profile-abita.theme:default'), u'3')
+            setup.getVersionForProfile('profile-abita.theme:default'), u'4')
 
     def test_types__Folder(self):
         types = getToolByName(self.portal, 'portal_types')

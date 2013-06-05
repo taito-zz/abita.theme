@@ -6,16 +6,6 @@
   <genericsetup:upgradeStep
     description=""
     destination="2"
-    handler="abita.theme.upgrades.show_path_bar"
-    profile="abita.theme:default"
-    sortkey="1"
-    source="1"
-    title="Show path bar"
-    />
-
-  <genericsetup:upgradeStep
-    description=""
-    destination="2"
     handler="abita.theme.upgrades.reimport_viewlets"
     profile="abita.theme:default"
     sortkey="2"
@@ -30,6 +20,26 @@
     profile="abita.theme:default"
     sortkey="1"
     source="2"
+    title="Reimport typeinfo"
+    />
+
+  <genericsetup:upgradeStep
+    description=""
+    destination="4"
+    handler="abita.theme.upgrades.reimport_viewlets"
+    profile="abita.theme:default"
+    sortkey="1"
+    source="3"
+    title="Reimport viewlets"
+    />
+
+  <genericsetup:upgradeStep
+    description=""
+    destination="4"
+    handler="abita.theme.upgrades.reimport_typeinfo"
+    profile="abita.theme:default"
+    sortkey="2"
+    source="3"
     title="Reimport typeinfo"
     />
 

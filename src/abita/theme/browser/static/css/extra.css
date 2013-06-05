@@ -13,7 +13,27 @@ section#client-year span#year {
     border: none;
 }
 
+#recent-box {
+    margin: 2em 0;
+}
+#recent-box > header,
+#recent-box > article {
+    padding: 0.3em 1em 0.2em;
+}
+#recent-box > header {
+    background: -moz-linear-gradient(center left, #E3E3E3 0%, #ffffff 100%);
+    background: -webkit-gradient(linear, left center, right center, from(#E3E3E3), to(#ffffff));
+    background: linear-gradient(center left, #E3E3E3 0%, #ffffff 100%);
+    font-size: 1.2em;
+    font-weight: bold;
+}
+#recent-box > article > header {
+    font-size: 1.1em;
+    line-height: 1.5em;
+}
+
 .footer-part {
     display: inline-block;
     margin: 0.5em 2em;
 }
+

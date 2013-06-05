@@ -3,11 +3,14 @@
   <order manager="plone.abovecontent" skinname="*">
     <viewlet name="plone.path_bar" />
   </order>
-  <hidden manager="plone.portalheader" skinname="*">
-    <viewlet name="plone.searchbox" />
-  </hidden>
-  <hidden manager="plone.portalfooter" skinname="*">
-    <viewlet name="plone.colophon" />
-    <viewlet name="plone.site_actions" />
-  </hidden>
+  <order manager="collective.base.viewlet-manager.base" skinname="*">
+    <!-- @@view for interface: plone.app.layout.navigation.interfaces.INavigationRoot -->
+    <viewlet name="abita.theme.viewlet.about" />
+    <viewlet name="abita.theme.viewlet.recent-blog" />
+    <viewlet name="abita.theme.viewlet.recent-work" />
+    <!-- @@work-history for content type: ATFolder -->
+    <viewlet name="abita.theme.viewlet.work-history" />
+    <!-- @@work-history for content type: ATEvent -->
+    <viewlet name="abita.theme.viewlet.work-history-event" />
+  </order>
 </object>
