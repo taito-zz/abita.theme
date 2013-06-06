@@ -7,54 +7,59 @@ abita.theme is for theming ABITA site.
 Changelog
 ---------
 
+0.15.1 (2013-06-06)
+===================
+
+- Refactor. [taito]
+
 0.14.2 (2013-05-13)
 ===================
 
-- Relocated static directory. [taito]
+- Relocate static directory. [taito]
 
 0.14.1 (2013-04-16)
 ===================
 
-- Added browser resource for static files. [taito]
+- Add browser resource for static files. [taito]
 
 0.14 (2013-04-15)
 =================
 
-- Moved test package to extras_require. [taito]
-- Removed dependency from five.grok. [taito]
-- Tested with Plone-4.3. [taito]
+- Move test package to extras_require. [taito]
+- Remove dependency from five.grok. [taito]
+- Test with Plone-4.3. [taito]
 
 0.13.3 (2013-03-23)
 ===================
 
-- Fixed work history client link. [taito]
-- Added country to work history view. [taito]
+- Fix work history client link. [taito]
+- Add country to work history view. [taito]
 
 0.13.2 (2013-03-21)
 ===================
 
-- Fixed history span. [taito]
+- Fix history span. [taito]
 
 0.13.1 (2013-03-21)
 ===================
 
-- Updated order of work history according to end date. [taito]
+- Update order of work history according to end date. [taito]
 
 0.13 (2013-03-21)
 =================
 
-- Added adapter for Event. [taito]
+- Add adapter for Event. [taito]
 
 0.12 (2013-03-19)
 =================
 
-- Updated footer, logo and added templates for work history. [taito]
-- Tested with Plone-4.2.5. [taito]
+- Update footer, logo and added templates for work history. [taito]
+- Teste with Plone-4.2.5. [taito]
 
 0.11.1 (2013-03-01)
 ===================
 
-- Updated styles. [taito]
+- Update styles. [taito]
 
 0.11 (2013-02-28)
 =================
@@ -64,23 +69,23 @@ Changelog
 0.10 (2013-02-24)
 =================
 
-- Moved files, which could be shared at multiple sites, to abita.basetheme package. [taito]
+- Move files, which can be shared at multiple sites, to abita.basetheme package. [taito]
 
 0.9.1 (2013-02-22)
 ==================
 
-- Fixed error when the about folder does not exist. [taito]
+- Fix error when the about folder does not exist. [taito]
 
 0.9 (2013-02-22)
 ================
 
-- Removed ContactViewlet. [taito]
-- Added AboutViewlet. [taito]
+- Remove ContactViewlet. [taito]
+- Add AboutViewlet. [taito]
 
 0.8.1 (2013-02-19)
 ==================
 
-- Updated style for documentFirstHeading and documentDescription. [taito]
+- Update style for documentFirstHeading and documentDescription. [taito]
 
 0.8 (2013-02-16)
 ================
@@ -90,19 +95,19 @@ Changelog
 0.7.1 (2013-02-03)
 ==================
 
-- Covered tests. [taito]
-- Tested with Plone-4.2.4. [taito]
+- Cover tests. [taito]
+- Teste with Plone-4.2.4. [taito]
 
 0.7 (2013-01-18)
 ================
 
-- Updated top page. [taito]
+- Update top page. [taito]
 
 0.6 (2013-01-07)
 ================
 
-- Removed dependency to plone.app.theming. [taito]
-- Added integration test for Travis CI. [taito]
+- Remove dependency to plone.app.theming. [taito]
+- Add integration test for Travis CI. [taito]
 
 0.5 (2012-09-15)
 ================

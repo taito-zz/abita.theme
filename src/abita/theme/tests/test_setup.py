@@ -1,6 +1,5 @@
-from abita.theme.tests.base import IntegrationTestCase
-from abita.utils.utils import get_css_resource
 from Products.CMFCore.utils import getToolByName
+from abita.theme.tests.base import IntegrationTestCase
 
 
 class TestCase(IntegrationTestCase):
@@ -19,92 +18,32 @@ class TestCase(IntegrationTestCase):
         from plone.browserlayer import utils
         self.assertIn(IAbitaThemeLayer, utils.registered_layers())
 
-    def test_cssregistry__abita_theme_main__applyPrefix(self):
-        resource = get_css_resource(self.portal, '++resource++abita.theme/css/main.css')
+    def test_cssregistry__abita_theme_main(self):
+        resource = getToolByName(self.portal, 'portal_css').getResource('++resource++abita.theme/css/main.css')
         self.assertTrue(resource.getApplyPrefix())
-
-    def test_cssregistry__abita_theme_main__authenticated(self):
-        resource = get_css_resource(self.portal, '++resource++abita.theme/css/main.css')
         self.assertFalse(resource.getAuthenticated())
-
-    def test_cssregistry__abita_theme_main__compression(self):
-        resource = get_css_resource(self.portal, '++resource++abita.theme/css/main.css')
         self.assertEqual(resource.getCompression(), 'safe')
-
-    def test_cssregistry__abita_theme_main__conditionalcomment(self):
-        resource = get_css_resource(self.portal, '++resource++abita.theme/css/main.css')
         self.assertEqual(resource.getConditionalcomment(), '')
-
-    def test_cssregistry__abita_theme_main__cookable(self):
-        resource = get_css_resource(self.portal, '++resource++abita.theme/css/main.css')
         self.assertTrue(resource.getCookable())
-
-    def test_cssregistry__abita_theme_main__enabled(self):
-        resource = get_css_resource(self.portal, '++resource++abita.theme/css/main.css')
         self.assertTrue(resource.getEnabled())
-
-    def test_cssregistry__abita_theme_main__expression(self):
-        resource = get_css_resource(self.portal, '++resource++abita.theme/css/main.css')
         self.assertEqual(resource.getExpression(), '')
-
-    def test_cssregistry__abita_theme_main__media(self):
-        resource = get_css_resource(self.portal, '++resource++abita.theme/css/main.css')
         self.assertEqual(resource.getMedia(), 'screen')
-
-    def test_cssregistry__abita_theme_main__rel(self):
-        resource = get_css_resource(self.portal, '++resource++abita.theme/css/main.css')
         self.assertEqual(resource.getRel(), 'stylesheet')
-
-    def test_cssregistry__abita_theme_main__rendering(self):
-        resource = get_css_resource(self.portal, '++resource++abita.theme/css/main.css')
         self.assertEqual(resource.getRendering(), 'link')
-
-    def test_cssregistry__abita_theme_main__title(self):
-        resource = get_css_resource(self.portal, '++resource++abita.theme/css/main.css')
         self.assertIsNone(resource.getTitle())
 
     def test_cssregistry__abita_theme_extra__applyPrefix(self):
-        resource = get_css_resource(self.portal, '++resource++abita.theme/css/extra.css')
+        resource = getToolByName(self.portal, 'portal_css').getResource('++resource++abita.theme/css/extra.css')
         self.assertTrue(resource.getApplyPrefix())
-
-    def test_cssregistry__abita_theme_extra__authenticated(self):
-        resource = get_css_resource(self.portal, '++resource++abita.theme/css/extra.css')
         self.assertFalse(resource.getAuthenticated())
-
-    def test_cssregistry__abita_theme_extra__compression(self):
-        resource = get_css_resource(self.portal, '++resource++abita.theme/css/extra.css')
         self.assertEqual(resource.getCompression(), 'safe')
-
-    def test_cssregistry__abita_theme_extra__conditionalcomment(self):
-        resource = get_css_resource(self.portal, '++resource++abita.theme/css/extra.css')
         self.assertEqual(resource.getConditionalcomment(), '')
-
-    def test_cssregistry__abita_theme_extra__cookable(self):
-        resource = get_css_resource(self.portal, '++resource++abita.theme/css/extra.css')
         self.assertTrue(resource.getCookable())
-
-    def test_cssregistry__abita_theme_extra__enabled(self):
-        resource = get_css_resource(self.portal, '++resource++abita.theme/css/extra.css')
         self.assertTrue(resource.getEnabled())
-
-    def test_cssregistry__abita_theme_extra__expression(self):
-        resource = get_css_resource(self.portal, '++resource++abita.theme/css/extra.css')
         self.assertEqual(resource.getExpression(), '')
-
-    def test_cssregistry__abita_theme_extra__media(self):
-        resource = get_css_resource(self.portal, '++resource++abita.theme/css/extra.css')
         self.assertEqual(resource.getMedia(), 'screen')
-
-    def test_cssregistry__abita_theme_extra__rel(self):
-        resource = get_css_resource(self.portal, '++resource++abita.theme/css/extra.css')
         self.assertEqual(resource.getRel(), 'stylesheet')
-
-    def test_cssregistry__abita_theme_extra__rendering(self):
-        resource = get_css_resource(self.portal, '++resource++abita.theme/css/extra.css')
         self.assertEqual(resource.getRendering(), 'link')
-
-    def test_cssregistry__abita_theme_extra__title(self):
-        resource = get_css_resource(self.portal, '++resource++abita.theme/css/extra.css')
         self.assertIsNone(resource.getTitle())
 
     def test_metadata__dependency__abita_basetheme(self):
@@ -156,9 +95,9 @@ class TestCase(IntegrationTestCase):
     def test_uninstall_cssregistry__abita_theme_main(self):
         installer = getToolByName(self.portal, 'portal_quickinstaller')
         installer.uninstallProducts(['abita.theme'])
-        self.assertIsNone(get_css_resource(self.portal, '++resource++abita.theme/css/main.css'))
+        self.assertIsNone(getToolByName(self.portal, 'portal_css').getResource('++resource++abita.theme/css/main.css'))
 
     def test_uninstall_cssregistry__abita_theme_extra(self):
         installer = getToolByName(self.portal, 'portal_quickinstaller')
         installer.uninstallProducts(['abita.theme'])
-        self.assertIsNone(get_css_resource(self.portal, '++resource++abita.theme/css/extra.css'))
+        self.assertIsNone(getToolByName(self.portal, 'portal_css').getResource('++resource++abita.theme/css/extra.css'))
