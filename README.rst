@@ -7,6 +7,11 @@ abita.theme is for theming ABITA site.
 Changelog
 ---------
 
+0.16 (2013-06-07)
+=================
+
+- Add view for services, blog and contributions. [taito]
+
 0.15.1 (2013-06-06)
 ===================
 
