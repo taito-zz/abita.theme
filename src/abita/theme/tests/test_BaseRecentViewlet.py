@@ -29,59 +29,20 @@ class BaseRecentViewletTestCase(IntegrationTestCase):
         instance = self.create_viewlet(BaseRecentViewlet)
         brain = mock.Mock()
         brain.Subject = ()
-        IAdapter().get_brain().Title = 'ÄÄÄ'
-        IAdapter().get_brain().Description = 'ÖÖÖ'
-        IAdapter().get_brain().getURL.return_value = 'ÅÅÅ'
-        self.assertEqual(instance._subjects(brain), [{
-            'description': 'ÖÖÖ',
-            'title': 'ÄÄÄ',
-            'url': 'ÅÅÅ',
-        }])
+        self.assertEqual(instance._subjects(brain), [])
 
     @mock.patch('abita.theme.browser.viewlet.IAdapter')
     def test__subjects__1(self, IAdapter):
         instance = self.create_viewlet(BaseRecentViewlet)
         brain = mock.Mock()
-        brain.Subject = ()
-        IAdapter().get_brain.return_value = None
-        self.assertEqual(instance._subjects(brain), [])
-
-    @mock.patch('abita.theme.browser.viewlet.IAdapter')
-    def test__subjects__2(self, IAdapter):
-        instance = self.create_viewlet(BaseRecentViewlet)
-        brain = mock.Mock()
         brain.Subject = ('Äää', 'Ööö')
-        IAdapter().get_brain.return_value = None
-        self.assertEqual(instance._subjects(brain), [{
-            'description': None,
-            'title': 'Äää',
-            'url': None,
-        }, {
-            'description': None,
-            'title': 'Ööö',
-            'url': None,
-        }])
-
-    @mock.patch('abita.theme.browser.viewlet.IAdapter')
-    def test__subjects__3(self, IAdapter):
-        instance = self.create_viewlet(BaseRecentViewlet)
-        brain = mock.Mock()
-        brain.Subject = ('Äää', 'Ööö')
-        IAdapter().get_brain().Title = 'ÄÄÄ'
-        IAdapter().get_brain().Description = 'ÖÖÖ'
         IAdapter().get_brain().getURL.return_value = 'ÅÅÅ'
         self.assertEqual(instance._subjects(brain), [{
-            'description': 'ÖÖÖ',
-            'title': 'ÄÄÄ',
-            'url': 'ÅÅÅ',
+            'title': 'Äää',
+            'url': 'ÅÅÅ?Subject=Äää',
         }, {
-            'description': 'ÖÖÖ',
-            'title': 'ÄÄÄ',
-            'url': 'ÅÅÅ',
-        }, {
-            'description': 'ÖÖÖ',
-            'title': 'ÄÄÄ',
-            'url': 'ÅÅÅ',
+            'title': 'Ööö',
+            'url': 'ÅÅÅ?Subject=Ööö',
         }])
 
     def test_item__0(self):

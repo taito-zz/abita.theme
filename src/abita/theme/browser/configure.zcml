@@ -33,7 +33,42 @@
     permission="zope2.View"
     />
 
+  <browser:page
+    class=".view.ServicesView"
+    for="Products.ATContentTypes.interfaces.folder.IATFolder"
+    layer=".interfaces.IAbitaThemeLayer"
+    name="services"
+    permission="zope2.View"
+    />
+
+  <browser:page
+    class=".view.NewsListingView"
+    for="Products.ATContentTypes.interfaces.folder.IATFolder"
+    layer=".interfaces.IAbitaThemeLayer"
+    name="news-listing"
+    permission="zope2.View"
+    />
+
   <!-- Viewlet -->
+
+  <browser:viewlet
+    class=".viewlet.KeywordsViewlet"
+    layer=".interfaces.IAbitaThemeLayer"
+    manager="plone.app.layout.viewlets.interfaces.IBelowContent"
+    name="plone.belowcontenttitle.keywords"
+    permission="zope2.View"
+    view="plone.app.layout.globals.interfaces.IViewView"
+    />
+
+  <browser:viewlet
+    class=".viewlet.FolderTagsViewlet"
+    for="Products.ATContentTypes.interfaces.folder.IATFolder"
+    layer=".interfaces.IAbitaThemeLayer"
+    manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"
+    name="abita.theme.viewlets.folder-tags"
+    permission="zope2.View"
+    view="plone.app.layout.globals.interfaces.IViewView"
+    />
 
   <browser:viewlet
     class=".viewlet.RecentWorkViewlet"
@@ -51,6 +86,16 @@
     layer=".interfaces.IAbitaThemeLayer"
     manager="collective.base.interfaces.IBaseViewViewletManager"
     name="abita.theme.viewlet.recent-blog"
+    permission="zope2.View"
+    view="abita.basetheme.browser.interfaces.INavigationRootView"
+    />
+
+  <browser:viewlet
+    class=".viewlet.RecentContributionViewlet"
+    for="plone.app.layout.navigation.interfaces.INavigationRoot"
+    layer=".interfaces.IAbitaThemeLayer"
+    manager="collective.base.interfaces.IBaseViewViewletManager"
+    name="abita.theme.viewlet.recent-contribution"
     permission="zope2.View"
     view="abita.basetheme.browser.interfaces.INavigationRootView"
     />
@@ -75,5 +120,44 @@
     view=".interfaces.IWorkHistoryEventView"
     />
 
+  <browser:viewlet
+    class=".viewlet.ServicesViewlet"
+    for="Products.ATContentTypes.interfaces.folder.IATFolder"
+    layer=".interfaces.IAbitaThemeLayer"
+    manager="collective.base.interfaces.IBaseViewViewletManager"
+    name="abita.theme.viewlet.services"
+    permission="zope2.View"
+    view=".interfaces.IServicesView"
+    />
+
+  <browser:viewlet
+    class=".viewlet.ServiceTextViewlet"
+    for="Products.ATContentTypes.interfaces.folder.IATFolder"
+    layer=".interfaces.IAbitaThemeLayer"
+    manager="collective.base.interfaces.IBaseViewViewletManager"
+    name="abita.theme.viewlet.service-text"
+    permission="zope2.View"
+    view=".interfaces.IServicesView"
+    />
+
+  <browser:viewlet
+    class=".viewlet.RecentServiceViewlet"
+    for="Products.ATContentTypes.interfaces.folder.IATFolder"
+    layer=".interfaces.IAbitaThemeLayer"
+    manager="collective.base.interfaces.IBaseViewViewletManager"
+    name="abita.theme.viewlet.recent-service"
+    permission="zope2.View"
+    view=".interfaces.IServicesView"
+    />
+
+  <browser:viewlet
+    class=".viewlet.NewsListingViewlet"
+    for="Products.ATContentTypes.interfaces.folder.IATFolder"
+    layer=".interfaces.IAbitaThemeLayer"
+    manager="collective.base.interfaces.IBaseViewViewletManager"
+    name="abita.theme.viewlet.news-listing"
+    permission="zope2.View"
+    view=".interfaces.INewsListingView"
+    />
 
 </configure>

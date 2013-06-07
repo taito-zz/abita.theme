@@ -8,9 +8,16 @@
     <viewlet name="abita.theme.viewlet.about" />
     <viewlet name="abita.theme.viewlet.recent-blog" />
     <viewlet name="abita.theme.viewlet.recent-work" />
+    <viewlet name="abita.theme.viewlet.recent-contribution" />
     <!-- @@work-history for content type: ATFolder -->
     <viewlet name="abita.theme.viewlet.work-history" />
     <!-- @@work-history for content type: ATEvent -->
     <viewlet name="abita.theme.viewlet.work-history-event" />
+    <!-- @@services for content type: ATFolder -->
+    <viewlet name="abita.theme.viewlet.services" />
+    <viewlet name="abita.theme.viewlet.service-text" />
+    <viewlet name="abita.theme.viewlet.recent-service" />
+    <!-- @@news-listing for content type: ATFolder -->
+    <viewlet name="abita.theme.viewlet.news-listing" />
   </order>
 </object>

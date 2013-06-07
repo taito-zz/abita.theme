@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2013-06-05 19:51+0000\n"
+"POT-Creation-Date: 2013-06-07 13:50+0000\n"
 "PO-Revision-Date: 2012-08-13 23:44+0900\n"
 "Last-Translator: Taito Horiuchi <taito.horiuchi@abita.fi>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
@@ -15,18 +15,61 @@ msgstr ""
 "Domain: abita.theme\n"
 "X-Is-Fallback-For: ja-jp\n"
 
-#: ./browser/viewlet.py:101
+#: ./browser/viewlets/work-history.pt:2
+msgid "ABITA's major works"
+msgstr "アビタの主な仕事"
+
+msgid "Business"
+msgstr "ビジネス"
+
+#: ./browser/viewlets/work-history.pt:8
+msgid "Client"
+msgstr "依頼主"
+
+msgid "Coordination"
+msgstr "コーディネーション"
+
+#: ./browser/viewlets/work-history.pt:7
+msgid "Description of work"
+msgstr "内容"
+
+msgid "Finland"
+msgstr "フィンランド"
+
+msgid "Food"
+msgstr "食"
+
+#: ./browser/viewlet.py:164
 msgid "Recent blog"
 msgstr "最新のブログ"
 
-#: ./browser/viewlet.py:112
+#: ./browser/viewlet.py:171
+msgid "Recent contribution"
+msgstr "最近の社会貢献"
+
+#: ./browser/viewlet.py:149
 msgid "Recent work"
 msgstr "最近の仕事"
+
+msgid "Research"
+msgstr "リサーチ"
+
+msgid "Web"
+msgstr "ウェブ"
+
+#: ./browser/viewlets/work-history.pt:6
+msgid "Year"
+msgstr "西暦"
 
 #. Default: "ABITA LLC <br /> Mitakedai 21-12-307 Aoba-ku<br /> Yokohama 227-0047 Japan<br /> TEL: +81 (0)45 974 2100"
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:5
 msgid "address-japan"
 msgstr "合同会社アビタ<br />〒227-0047<br />横浜市青葉区みたけ台21-12-307<br />TEL&FAX: 045-974-2100"
+
+#. Default: "ABITA's major works from 2004 to ${year}"
+#: ./browser/viewlets/work-history.pt:3
+msgid "major-works-from-2004"
+msgstr "アビタの主な仕事　2004-${year}年"
 
 #. Default: "<span id=\"label\">Client</span> ${client}"
 #: ./browser/viewlets/work-history-event.pt:5

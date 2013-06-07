@@ -1,4 +1,4 @@
-<section tal:condition="view/works">
+<section  i18n:domain="abita.theme" tal:condition="view/works">
   <table class="grid listing" summary="ABITA's major works" i18n:attributes="summary">
     <caption i18n:translate="major-works-from-2004">ABITA's major works from 2004 to <span i18n:name="year" tal:replace="view/year" /></caption>
     <thead>

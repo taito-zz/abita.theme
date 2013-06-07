@@ -1,0 +1,10 @@
+<section i18n:domain="abita.theme" id="services" tal:condition="view/available">
+  <article tal:repeat="item view/services" tal:attributes="id item/id">
+    <header>
+      <h1>
+        <a tal:attributes="href item/url" tal:content="item/title" />
+      </h1>
+    </header>
+    <p tal:content="item/description" />
+  </article>
+</section>

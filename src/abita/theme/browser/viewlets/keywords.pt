@@ -1,0 +1,17 @@
+<div
+  class="documentByLine"
+  i18n:domain="plone"
+  id="category"
+  tal:condition="view/available">
+  <tal:filedunder i18n:translate="label_filed_under">Filed under:</tal:filedunder>
+  <span i18n:domain="abita.theme" tal:repeat="category view/categories">
+    <a href=""
+      class="link-category"
+      i18n:translate=""
+      rel="tag"
+      tal:content="category/title"
+      tal:attributes="href category/url">
+      Category
+    </a>
+  </span>
+</div>

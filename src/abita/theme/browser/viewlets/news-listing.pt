@@ -1,0 +1,25 @@
+<section i18n:domain="abita.theme" id="news-listing" tal:condition="view/available">
+  <article tal:repeat="item view/news">
+    <header>
+      <h1>
+        <a tal:attributes="href item/url" tal:content="item/title" />
+      </h1>
+      <time tal:attributes="datetime item/datetime" tal:content="item/date" />
+      <aside>
+        <span tal:repeat="subject item/subjects">
+          <a
+            class="link-category"
+            i18n:translate=""
+            tal:attributes="href subject/url"
+            tal:content="subject/title" />
+        </span>
+      </aside>
+    </header>
+    <p tal:content="item/description" />
+    <aside>
+      <a i18n:domain="plone" i18n:translate="read_more" tal:attributes="href item/url">
+        Read More...
+      </a>
+    </aside>
+  </article>
+</section>

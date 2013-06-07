@@ -1,2 +1,0 @@
-<section id="recent-blog" tal:condition="view/available">
-</section>

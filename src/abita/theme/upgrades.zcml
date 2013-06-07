@@ -43,4 +43,24 @@
     title="Reimport typeinfo"
     />
 
+  <genericsetup:upgradeStep
+    description=""
+    destination="5"
+    handler="abita.theme.upgrades.reimport_typeinfo"
+    profile="abita.theme:default"
+    sortkey="1"
+    source="4"
+    title="Reimport typeinfo"
+    />
+
+  <genericsetup:upgradeStep
+    description=""
+    destination="5"
+    handler="abita.theme.upgrades.reimport_viewlets"
+    profile="abita.theme:default"
+    sortkey="2"
+    source="4"
+    title="Reimport viewlets"
+    />
+
 </configure>

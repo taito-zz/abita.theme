@@ -21,10 +21,45 @@ class IWorkHistoryView(IBaseView):
 
 
 class IWorkHistoryEventView(IBaseView):
-    """View interface for @@work-history for ATEvent"""
+    """View interface for @@work-history for content type: ATEvent"""
+
+
+class IBaseSubjectView(IBaseView):
+    """Base view interface for @@services for content type: ATFolder"""
+
+    def subject():
+        """Return Subject from request or None"""
+
+    def doc():
+        """Return object of ATDocument
+
+        :rtype: object
+        """
+
+
+class IServicesView(IBaseSubjectView):
+    """View interface for @@services for content type: ATFolder"""
+
+
+class INewsListingView(IBaseSubjectView):
+    """View interface for @@news-listing for content type: ATFolder"""
 
 
 # Viewlet
+
+class IKeywordsViewlet(IViewlet):
+    """Viewlet interface to show tags"""
+
+    def categories():
+        """Return list of dictionary
+
+        :rtype: list
+        """
+
+
+class IFolderTagsViewlet(IKeywordsViewlet):
+    """Viewlet interface to show tags for content type: ATFolder"""
+
 
 class IBaseRecentViewlet(IViewlet):
     """Viewlet interface for recent box"""
@@ -45,11 +80,15 @@ class IBaseRecentViewlet(IViewlet):
         """
 
 
+class IRecentWorkViewlet(IBaseRecentViewlet):
+    """Viewlet interface to show recent work"""
+
+
 class IRecentBlogViewlet(IBaseRecentViewlet):
     """Viewlet interface to show recent blog"""
 
 
-class IRecentWorkViewlet(IBaseRecentViewlet):
+class IRecentContributionViewlet(IBaseRecentViewlet):
     """Viewlet interface to show recent work"""
 
 
@@ -64,4 +103,38 @@ class IWorkHistoryEventViewlet(IViewlet):
         """Return year
 
         :rtype: str
+        """
+
+
+class IServicesViewlet(IViewlet):
+    """Viewlet interface for content type: ATFolder"""
+
+    def services():
+        """Return list of dictionary
+
+        :rtype: list
+        """
+
+
+class IServiceTextViewlet(IViewlet):
+    """Viewlet interface to show text"""
+
+    def text():
+        """Return body text
+
+        :rtype: unicode
+        """
+
+
+class IRecentServiceViewlet(IRecentWorkViewlet):
+    """Viewlet interface to show recent service"""
+
+
+class INewsListingViewlet(IViewlet):
+    """Viewlet interface to show news listing"""
+
+    def news():
+        """Return list of dictionary
+
+        :rtype: list
         """
