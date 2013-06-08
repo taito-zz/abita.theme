@@ -48,7 +48,7 @@ class BaseSubjectView(BaseView):
     def doc(self):
         """Return instance of ATDocument"""
         if self.subject():
-            return IAdapter(self.context).get_object(IATDocument, depth=1, Subject=self.subject())
+            return IAdapter(self.context).get_object(IATDocument, depth=1, Subject=self.subject(), sort_on="getObjPositionInParent")
 
     def title(self):
         if self.doc():

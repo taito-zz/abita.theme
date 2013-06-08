@@ -52,16 +52,18 @@ class NewsListingViewletTestCase(IntegrationTestCase):
             'subjects': 'SUBJECTS',
         }])
 
-    @mock.patch('abita.theme.browser.viewlet.aq_parent')
-    def test__subjects(self, aq_parent):
+    def test__subjects(self):
         instance = self.create_viewlet(NewsListingViewlet)
-        aq_parent().absolute_url.return_value = 'URL'
         item = mock.Mock()
         item.Subject.return_value = ('Äää', 'Ööö')
         self.assertEqual(instance._subjects(item), [{
             'title': 'Äää',
-            'url': 'URL?Subject=Äää',
+            'url': 'http://nohost/plone?Subject=Äää',
         }, {
             'title': 'Ööö',
-            'url': 'URL?Subject=Ööö',
+            'url': 'http://nohost/plone?Subject=Ööö',
         }])
+
+    def test_title(self):
+        instance = self.create_viewlet(NewsListingViewlet)
+        self.assertEqual(instance.title(), u'recent-something')

@@ -133,6 +133,12 @@ class IRecentServiceViewlet(IRecentWorkViewlet):
 class INewsListingViewlet(IViewlet):
     """Viewlet interface to show news listing"""
 
+    def title():
+        """Return title from folder title
+
+        :rtype: str
+        """
+
     def news():
         """Return list of dictionary
 

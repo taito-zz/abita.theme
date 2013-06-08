@@ -15,6 +15,9 @@ h1, h2, h3, h4, h5, h6 {
     border-bottom: 0.2em solid #003366;
     border-left: 0.4em solid #006c00;
 }
+#content a:hover {
+    color: #aaa !important;
+}
 #category a.link-category:hover {
     color: white !important;
 }

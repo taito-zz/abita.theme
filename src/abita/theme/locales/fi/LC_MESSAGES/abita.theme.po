@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-06-07 13:50+0000\n"
+"POT-Creation-Date: 2013-06-08 11:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,19 +38,25 @@ msgstr ""
 msgid "Food"
 msgstr ""
 
-#: ./browser/viewlet.py:164
+msgid "Open Source Technology"
+msgstr ""
+
+#: ./browser/viewlet.py:168
 msgid "Recent blog"
 msgstr "Uusin blogi"
 
-#: ./browser/viewlet.py:171
+#: ./browser/viewlet.py:175
 msgid "Recent contribution"
 msgstr ""
 
-#: ./browser/viewlet.py:149
+#: ./browser/viewlet.py:153
 msgid "Recent work"
 msgstr "Uusin työ"
 
 msgid "Research"
+msgstr ""
+
+msgid "Technology"
 msgstr ""
 
 msgid "Web"
@@ -70,12 +76,19 @@ msgstr ""
 msgid "major-works-from-2004"
 msgstr ""
 
+#. Default: "Recent ${something}"
+#: ./browser/viewlet.py:323
+msgid "recent-something"
+msgstr ""
+
 #. Default: "<span id=\"label\">Client</span> ${client}"
+#: ./browser/viewlets/recent-service.pt:11
 #: ./browser/viewlets/work-history-event.pt:5
 msgid "work-client"
 msgstr ""
 
 #. Default: "<span id=\"label\">Year</span> ${year}"
+#: ./browser/viewlets/recent-service.pt:28
 #: ./browser/viewlets/work-history-event.pt:22
 msgid "work-year"
 msgstr ""

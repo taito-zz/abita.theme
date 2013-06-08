@@ -4,6 +4,7 @@ from Products.ATContentTypes.interfaces.document import IATDocument
 from Products.ATContentTypes.interfaces.event import IATEvent
 from Products.ATContentTypes.interfaces.folder import IATFolder
 from Products.ATContentTypes.interfaces.news import IATNewsItem
+from Products.CMFPlone.utils import safe_unicode
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from abita.theme import _
 from abita.theme.browser.interfaces import IBaseRecentViewlet
@@ -46,7 +47,7 @@ class KeywordsViewlet(Viewlet):
         :rtype: list
         """
         res = []
-        if IATEvent.providedBy(self.context) or IATDocument.providedBy(self.context):
+        if IATEvent.providedBy(self.context) or IATNewsItem.providedBy(self.context):
             parent_url = aq_parent(aq_inner(self.context)).absolute_url()
             for category in self.context.Subject():
                 res.append({
@@ -105,7 +106,10 @@ class BaseRecentViewlet(Viewlet):
         res = []
         parent_brain = IAdapter(self.context).get_brain(IATFolder, path=self._path(), depth=0)
         parent_url = parent_brain.getURL()
-        for subject in brain.Subject:
+        subjects = brain.Subject
+        if hasattr(subjects, '__call__'):
+            subjects = subjects()
+        for subject in subjects:
             res.append({
                 'title': subject,
                 'url': '{}?Subject={}'.format(parent_url, subject),
@@ -115,7 +119,7 @@ class BaseRecentViewlet(Viewlet):
     @memoize
     def _brain(self):
         """Return brain"""
-        return IAdapter(self.context).get_brain(IATDocument, path=self._path(), sort_on='effective', sort_order='descending')
+        return IAdapter(self.context).get_brain(IATNewsItem, path=self._path(), sort_on='effective', sort_order='descending')
 
     def item(self):
         """Return dicrionary
@@ -270,23 +274,53 @@ class ServiceTextViewlet(Viewlet):
 class RecentServiceViewlet(RecentWorkViewlet):
     """Viewlet to show recent service"""
     implements(IRecentServiceViewlet)
+    index = ViewPageTemplateFile('viewlets/recent-service.pt')
 
-    @memoize
-    def _brain(self):
-        """Return dicrionary
+    def available(self):
+        """Return True or False
 
-        :rtype: dict
+        :rtype: bool
         """
-        if self.view.subject():
-            return IAdapter(self.context).get_brain(IATEvent, path=self._path(), sort_on='end', sort_order='descending',
-                Subject=self.view.subject())
+        if self.items():
+            return True
         else:
-            return super(RecentServiceViewlet, self)._brain()
+            return False
+
+    def items(self):
+        """Return brains"""
+        query = {
+            'sort_limit': 3,
+            'sort_on': 'end',
+            'sort_order': 'descending',
+        }
+        if self.view.subject():
+            query['Subject'] = self.view.subject()
+
+        res = []
+        for item in IAdapter(self.context).get_content_listing(IATEvent, **query):
+            res.append({
+                'client': item.contactName,
+                'client_url': item.eventUrl,
+                'description': item.Description(),
+                'location': item.location,
+                'subjects': self._subjects(item),
+                'title': item.Title(),
+                'url': item.getURL(),
+                'year': IEventAdapter(item).year(),
+            })
+        return res
 
 
 class NewsListingViewlet(Viewlet):
     implements(INewsListingViewlet)
     index = ViewPageTemplateFile('viewlets/news-listing.pt')
+
+    def title(self):
+        """Return title from folder title
+
+        :rtype: str
+        """
+        return _(u'recent-something', default=u"Recent ${something}", mapping={'something': safe_unicode(self.context.Title())})
 
     def available(self):
         """Return True or False
@@ -321,11 +355,10 @@ class NewsListingViewlet(Viewlet):
         return res
 
     def _subjects(self, item):
-        parent_url = aq_parent(aq_inner(self.context)).absolute_url()
         res = []
         for subject in item.Subject():
             res.append({
                 'title': subject,
-                'url': '{}?Subject={}'.format(parent_url, subject),
+                'url': '{}?Subject={}'.format(self.context.absolute_url(), subject),
             })
         return res

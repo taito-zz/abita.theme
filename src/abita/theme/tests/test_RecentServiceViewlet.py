@@ -20,21 +20,37 @@ class RecentServiceViewletTestCase(IntegrationTestCase):
         instance = self.create_viewlet(RecentServiceViewlet)
         self.assertTrue(verifyObject(IRecentServiceViewlet, instance))
 
-    @mock.patch('abita.theme.browser.viewlet.IAdapter')
-    def test__brain__0(self, IAdapter):
-        from Products.ATContentTypes.interfaces.event import IATEvent
-        view = mock.Mock()
-        view.subject.return_value = ('Äää',)
-        instance = self.create_viewlet(RecentServiceViewlet, view=view)
-        instance._path = mock.Mock(return_value='PATH')
-        self.assertIsNotNone(instance._brain())
-        IAdapter().get_brain.assert_called_with(IATEvent, path='PATH', sort_on='end', sort_order='descending', Subject=('Äää',))
+    def test_available(self):
+        instance = self.create_viewlet(RecentServiceViewlet)
+        instance.items = mock.Mock()
+        self.assertTrue(instance.available())
 
-    @mock.patch('abita.theme.browser.viewlet.RecentWorkViewlet._brain')
-    def test__brain__1(self, _brain):
+        instance.items.return_value = None
+        self.assertFalse(instance.available())
+
+    @mock.patch('abita.theme.browser.viewlet.IEventAdapter')
+    @mock.patch('abita.theme.browser.viewlet.IAdapter')
+    def test_items(self, IAdapter, IEventAdapter):
         view = mock.Mock()
+        view.subject.return_value = ('Äää')
+        item = mock.Mock()
+        item.contactName = 'CONTACT'
+        item.eventUrl = 'EVENT_URL'
+        item.Description.return_value = 'DESCRIPITON'
+        item.location = 'LOCATION'
+        item.Title.return_value = 'TITLE'
+        item.getURL.return_value = 'URL'
+        IEventAdapter().year.return_value = '2013'
         instance = self.create_viewlet(RecentServiceViewlet, view=view)
-        instance.view.subject.return_value = None
-        instance = self.create_viewlet(RecentServiceViewlet, view=view)
-        self.assertIsNotNone(instance._brain())
-        self.assertTrue(_brain.called)
+        instance._subjects = mock.Mock(return_value='SUBJECTS')
+        IAdapter().get_content_listing.return_value = [item]
+        self.assertEqual(instance.items(), [{
+            'client': 'CONTACT',
+            'client_url': 'EVENT_URL',
+            'description': 'DESCRIPITON',
+            'location': 'LOCATION',
+            'subjects': 'SUBJECTS',
+            'title': 'TITLE',
+            'url': 'URL',
+            'year': '2013',
+        }])

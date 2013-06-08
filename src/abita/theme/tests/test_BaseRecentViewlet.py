@@ -45,6 +45,20 @@ class BaseRecentViewletTestCase(IntegrationTestCase):
             'url': 'ÅÅÅ?Subject=Ööö',
         }])
 
+    @mock.patch('abita.theme.browser.viewlet.IAdapter')
+    def test__subjects__2(self, IAdapter):
+        instance = self.create_viewlet(BaseRecentViewlet)
+        brain = mock.Mock()
+        brain.Subject = mock.Mock(return_value=('Äää', 'Ööö'))
+        IAdapter().get_brain().getURL.return_value = 'ÅÅÅ'
+        self.assertEqual(instance._subjects(brain), [{
+            'title': 'Äää',
+            'url': 'ÅÅÅ?Subject=Äää',
+        }, {
+            'title': 'Ööö',
+            'url': 'ÅÅÅ?Subject=Ööö',
+        }])
+
     def test_item__0(self):
         instance = self.create_viewlet(BaseRecentViewlet)
         self.assertIsNone(instance.item())

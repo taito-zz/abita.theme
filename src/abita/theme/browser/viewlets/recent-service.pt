@@ -1,0 +1,51 @@
+<section i18n:domain="abita.theme" id="recent-box" tal:attributes="class view/style_class" tal:condition="view/available">
+  <header tal:content="view/title" />
+  <article tal:repeat="item view/items">
+    <header>
+      <h1>
+        <a tal:attributes="href item/url" tal:content="item/title" />
+      </h1>
+      <aside>
+        <span id="client" i18n:translate="work-client" tal:condition="item/client_url">
+          <span id="label">Client</span>
+            <a
+              id="variable"
+              i18n:name="client"
+              tal:attributes="href item/client_url"
+              tal:content="item/client"
+              />
+        </span>
+        <span id="client" i18n:translate="work-client" tal:condition="not: item/client_url">
+          <span id="label">Client</span>
+          <span
+            id="variable"
+            i18n:name="client"
+            tal:content="item/client"
+            />
+        </span>
+        <span id="year" i18n:translate="work-year">
+          <span id="label" >Year</span>
+          <span id="variable" i18n:name="year" tal:content="item/year" />
+        </span>
+        <span id="location" tal:content="item/location" />
+      </aside>
+    </header>
+    <p tal:content="item/description" />
+    <aside>
+      <a i18n:domain="plone" i18n:translate="read_more" tal:attributes="href item/url">
+        Read More...
+      </a>
+    </aside>
+    <footer>
+      <div id="category">
+        <span tal:repeat="subject item/subjects">
+          <a
+            class="link-category"
+            i18n:translate=""
+            tal:attributes="href subject/url"
+            tal:content="subject/title" />
+        </span>
+      </div>
+    </footer>
+  </article>
+</section>

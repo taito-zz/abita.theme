@@ -29,11 +29,14 @@ msgstr ""
 msgid "Food"
 msgstr ""
 
+msgid "Open Source Technology"
+msgstr ""
+
 msgid "Research"
+msgstr ""
+
+msgid "Technology"
 msgstr ""
 
 msgid "Web"
 msgstr ""
-
-
-

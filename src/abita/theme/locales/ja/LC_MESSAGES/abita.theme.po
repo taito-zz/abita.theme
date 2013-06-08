@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2013-06-07 13:50+0000\n"
+"POT-Creation-Date: 2013-06-08 11:14+0000\n"
 "PO-Revision-Date: 2012-08-13 23:44+0900\n"
 "Last-Translator: Taito Horiuchi <taito.horiuchi@abita.fi>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
@@ -39,20 +39,26 @@ msgstr "フィンランド"
 msgid "Food"
 msgstr "食"
 
-#: ./browser/viewlet.py:164
+msgid "Open Source Technology"
+msgstr "オープンソーステクノロジー"
+
+#: ./browser/viewlet.py:168
 msgid "Recent blog"
 msgstr "最新のブログ"
 
-#: ./browser/viewlet.py:171
+#: ./browser/viewlet.py:175
 msgid "Recent contribution"
 msgstr "最近の社会貢献"
 
-#: ./browser/viewlet.py:149
+#: ./browser/viewlet.py:153
 msgid "Recent work"
 msgstr "最近の仕事"
 
 msgid "Research"
 msgstr "リサーチ"
+
+msgid "Technology"
+msgstr "テクノロジー"
 
 msgid "Web"
 msgstr "ウェブ"
@@ -71,12 +77,19 @@ msgstr "合同会社アビタ<br />〒227-0047<br />横浜市青葉区みたけ�
 msgid "major-works-from-2004"
 msgstr "アビタの主な仕事　2004-${year}年"
 
+#. Default: "Recent ${something}"
+#: ./browser/viewlet.py:323
+msgid "recent-something"
+msgstr "最近の${something}"
+
 #. Default: "<span id=\"label\">Client</span> ${client}"
+#: ./browser/viewlets/recent-service.pt:11
 #: ./browser/viewlets/work-history-event.pt:5
 msgid "work-client"
 msgstr "<span id=\"label\">依頼主</span> ${client}"
 
 #. Default: "<span id=\"label\">Year</span> ${year}"
+#: ./browser/viewlets/recent-service.pt:28
 #: ./browser/viewlets/work-history-event.pt:22
 msgid "work-year"
 msgstr "${year}<span id=\"label\">年</span>"

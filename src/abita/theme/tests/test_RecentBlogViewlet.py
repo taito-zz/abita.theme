@@ -21,8 +21,8 @@ class RecentBlogViewletTestCase(IntegrationTestCase):
 
     @mock.patch('abita.theme.browser.viewlet.IAdapter')
     def test__brain(self, IAdapter):
-        from Products.ATContentTypes.interfaces.document import IATDocument
+        from Products.ATContentTypes.interfaces.news import IATNewsItem
         instance = self.create_viewlet(RecentBlogViewlet)
         instance._path = mock.Mock(return_value='PATH')
         self.assertIsNotNone(instance._brain())
-        IAdapter().get_brain.assert_called_with(IATDocument, path='PATH', sort_on='effective', sort_order='descending')
+        IAdapter().get_brain.assert_called_with(IATNewsItem, path='PATH', sort_on='effective', sort_order='descending', )

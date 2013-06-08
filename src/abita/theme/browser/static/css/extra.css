@@ -21,16 +21,48 @@ section#client-year span#year {
     padding: 0.3em 1em 0.2em;
 }
 #recent-box > header {
-    background: -moz-linear-gradient(center left, #E3E3E3 0%, #ffffff 100%);
-    background: -webkit-gradient(linear, left center, right center, from(#E3E3E3), to(#ffffff));
-    background: linear-gradient(center left, #E3E3E3 0%, #ffffff 100%);
+    background: -moz-linear-gradient(center left, rgba(227, 227, 227, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    background: -webkit-gradient(linear, left center, right center, from(rgba(227, 227, 227, 1)), to(rgba(255, 255, 255, 1)));
+    background: linear-gradient(center left, rgba(227, 227, 227, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    color: #333;
     font-size: 1.2em;
     font-weight: bold;
 }
-#recent-box > article > header {
-    font-size: 1.1em;
+#recent-box > article {
+    border-bottom: 1px dotted #666;
+}
+#recent-box > article > header > h1 {
+    font-size: 1.3em;
     line-height: 1.5em;
 }
+#recent-box article header aside {
+    color: #666;
+}
+#recent-box article header aside > span {
+    margin-right: 0.5em;
+}
+
+#services article {
+    background: -moz-linear-gradient(top center, rgba(227, 227, 227, 1) 0%, rgba(255, 255, 255, 1) 70%, rgba(227, 227, 227, 1) 100%);
+    background: -webkit-gradient(linear, center top, center bottom, from(rgba(227, 227, 227, 1)), color-stop(0.7, rgba(255, 255, 255, 1)), to(rgba(227, 227, 227, 1)));
+    background: linear-gradient(top center, rgba(227, 227, 227, 1) 0%, rgba(255, 255, 255, 1) 70%, rgba(227, 227, 227, 1) 100%);
+    border-radius: 0.5em;
+    margin: 1em 0;
+    padding: 2em;
+}
+#services article:hover {
+    background: -moz-linear-gradient(top center, rgba(32, 92, 144, 1) 0%, rgba(227, 227, 227, 1) 70%, rgba(32, 92, 144, 1) 100%);
+    background: -webkit-gradient(linear, center top, center bottom, from(rgba(32, 92, 144, 1)), color-stop(0.7, rgba(227, 227, 227, 1)), to(rgba(32, 92, 144, 1)));
+    background: linear-gradient(top center, rgba(32, 92, 144, 1) 0%, rgba(227, 227, 227, 1) 70%, rgba(32, 92, 144, 1) 100%);
+}
+#services article h1 {
+    margin-bottom: 1em;
+    text-align: right;
+}
+#services article:hover h1 a {
+    color: white;
+}
+
 
 .footer-part {
     display: inline-block;
