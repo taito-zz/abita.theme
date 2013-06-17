@@ -35,6 +35,9 @@ msgstr ""
 msgid "Research"
 msgstr ""
 
+msgid "Society"
+msgstr ""
+
 msgid "Technology"
 msgstr ""
 

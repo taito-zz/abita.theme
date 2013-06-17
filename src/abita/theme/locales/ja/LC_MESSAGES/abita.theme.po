@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2013-06-08 11:14+0000\n"
+"POT-Creation-Date: 2013-06-17 08:15+0000\n"
 "PO-Revision-Date: 2012-08-13 23:44+0900\n"
 "Last-Translator: Taito Horiuchi <taito.horiuchi@abita.fi>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
@@ -56,6 +56,9 @@ msgstr "最近の仕事"
 
 msgid "Research"
 msgstr "リサーチ"
+
+msgid "Society"
+msgstr "社会"
 
 msgid "Technology"
 msgstr "テクノロジー"
