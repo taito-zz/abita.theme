@@ -7,6 +7,11 @@ abita.theme is for theming ABITA site.
 Changelog
 ---------
 
+0.16.3 (2013-06-20)
+===================
+
+- Remove *.mo files. [taito]
+
 0.16.2 (2013-06-17)
 ===================
 
