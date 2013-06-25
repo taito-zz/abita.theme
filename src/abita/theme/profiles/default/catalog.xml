@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<object name="portal_catalog" meta_type="Plone Catalog Tool">
+  <column value="Language"/>
+  <column value="lang_codes"/>
+  <column value="shared"/>
+  <column value="url"/>
+  <column value="updated"/>
+  <index name="Language" meta_type="FieldIndex">
+    <indexed_attr value="Language"/>
+  </index>
+  <index name="lang_codes" meta_type="KeywordIndex">
+    <indexed_attr value="lang_codes"/>
+  </index>
+  <index name="shared" meta_type="BooleanIndex">
+    <indexed_attr value="shared"/>
+  </index>
+  <index name="url" meta_type="FieldIndex">
+    <indexed_attr value="url"/>
+  </index>
+  <index name="updated" meta_type="FieldIndex">
+    <indexed_attr value="updated"/>
+  </index>
+</object>

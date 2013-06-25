@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-06-17 08:15+0000\n"
+"POT-Creation-Date: 2013-06-25 11:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,20 @@ msgstr ""
 msgid "ABITA's major works"
 msgstr ""
 
+msgid "Blog"
+msgstr ""
+
 msgid "Business"
 msgstr ""
 
 #: ./browser/viewlets/work-history.pt:8
 msgid "Client"
+msgstr ""
+
+msgid "Contact"
+msgstr ""
+
+msgid "Contributions"
 msgstr ""
 
 msgid "Coordination"
@@ -38,22 +47,28 @@ msgstr ""
 msgid "Food"
 msgstr ""
 
+msgid "News"
+msgstr ""
+
 msgid "Open Source Technology"
 msgstr ""
 
-#: ./browser/viewlet.py:168
+#: ./browser/viewlet.py:214
 msgid "Recent blog"
 msgstr ""
 
-#: ./browser/viewlet.py:175
+#: ./browser/viewlet.py:221
 msgid "Recent contribution"
 msgstr ""
 
-#: ./browser/viewlet.py:153
+#: ./browser/viewlet.py:197
 msgid "Recent work"
 msgstr ""
 
 msgid "Research"
+msgstr ""
+
+msgid "Services"
 msgstr ""
 
 msgid "Society"
@@ -80,7 +95,7 @@ msgid "major-works-from-2004"
 msgstr ""
 
 #. Default: "Recent ${something}"
-#: ./browser/viewlet.py:323
+#: ./browser/viewlet.py:375
 msgid "recent-something"
 msgstr ""
 

@@ -25,4 +25,4 @@ class RecentWorkViewletTestCase(IntegrationTestCase):
         instance = self.create_viewlet(RecentWorkViewlet)
         instance._path = mock.Mock(return_value='PATH')
         self.assertIsNotNone(instance._brain())
-        IAdapter().get_brain.assert_called_with(IATEvent, path='PATH', sort_on='end', sort_order='descending')
+        IAdapter().get_brain.assert_called_with(IATEvent, path='PATH', sort_on='end', sort_order='descending', Language='en')

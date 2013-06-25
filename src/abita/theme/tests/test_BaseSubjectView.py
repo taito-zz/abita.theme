@@ -31,7 +31,7 @@ class BaseSubjectViewTestCase(IntegrationTestCase):
         instance = self.create_view(BaseSubjectView)
         instance.subject = mock.Mock(return_value='SUBJECT')
         self.assertIsNotNone(instance.doc())
-        IAdapter().get_object.assert_called_with(IATDocument, depth=1, Subject='SUBJECT', sort_on="getObjPositionInParent")
+        IAdapter().get_object.assert_called_with(IATDocument, depth=1, Subject='SUBJECT', sort_on="getObjPositionInParent", Language='en')
 
     def test_title(self):
         instance = self.create_view(BaseSubjectView)

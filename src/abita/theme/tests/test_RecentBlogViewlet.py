@@ -25,4 +25,4 @@ class RecentBlogViewletTestCase(IntegrationTestCase):
         instance = self.create_viewlet(RecentBlogViewlet)
         instance._path = mock.Mock(return_value='PATH')
         self.assertIsNotNone(instance._brain())
-        IAdapter().get_brain.assert_called_with(IATNewsItem, path='PATH', sort_on='effective', sort_order='descending', )
+        IAdapter().get_brain.assert_called_with(IATNewsItem, path='PATH', sort_on='effective', sort_order='descending', Language='en')

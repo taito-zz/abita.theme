@@ -52,6 +52,14 @@
   <!-- Viewlet -->
 
   <browser:viewlet
+    class=".viewlet.GlobalSectionsViewlet"
+    layer=".interfaces.IAbitaThemeLayer"
+    manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+    name="plone.global_sections"
+    permission="zope2.View"
+    />
+
+  <browser:viewlet
     class=".viewlet.KeywordsViewlet"
     layer=".interfaces.IAbitaThemeLayer"
     manager="plone.app.layout.viewlets.interfaces.IBelowContent"
@@ -68,6 +76,16 @@
     name="abita.theme.viewlets.folder-tags"
     permission="zope2.View"
     view="plone.app.layout.globals.interfaces.IViewView"
+    />
+
+  <browser:viewlet
+    class=".viewlet.AboutViewlet"
+    for="plone.app.layout.navigation.interfaces.INavigationRoot"
+    layer=".interfaces.IAbitaThemeLayer"
+    manager="collective.base.interfaces.IBaseViewViewletManager"
+    name="abita.theme.viewlet.about"
+    permission="zope2.View"
+    view="abita.basetheme.browser.interfaces.INavigationRootView"
     />
 
   <browser:viewlet

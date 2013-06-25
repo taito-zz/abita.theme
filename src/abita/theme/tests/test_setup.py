@@ -61,34 +61,15 @@ class TestCase(IntegrationTestCase):
         for method in methods:
             self.assertIn(method, types.getTypeInfo('Folder').getProperty('view_methods'))
 
-    def test_viewlets__hidden__plone_portalheader(self):
+    def test_viewlets__hidden__collective_base_viewlet_manager_base(self):
         from zope.component import getUtility
         from plone.app.viewletmanager.interfaces import IViewletSettingsStorage
         storage = getUtility(IViewletSettingsStorage)
-        manager = "plone.portalheader"
-        skinname = "*"
-        self.assertIn(u'plone.searchbox', storage.getHidden(manager, skinname))
-
-    def test_viewlets__hidden__plone_portalfooter(self):
-        from zope.component import getUtility
-        from plone.app.viewletmanager.interfaces import IViewletSettingsStorage
-        storage = getUtility(IViewletSettingsStorage)
-        manager = "plone.portalfooter"
+        manager = "collective.base.viewlet-manager.base"
         skinname = "*"
         for viewlet in (
-            u'plone.colophon',
-            u'plone.site_actions'):
+            u'abita.basetheme.viewlet.about',):
             self.assertIn(viewlet, storage.getHidden(manager, skinname))
-
-    def test_viewlets__order__plone_abovecontent(self):
-        from zope.component import getUtility
-        from plone.app.viewletmanager.interfaces import IViewletSettingsStorage
-        storage = getUtility(IViewletSettingsStorage)
-        manager = "plone.abovecontent"
-        skinname = "*"
-        for viewlet in (
-            u'plone.path_bar', ):
-            self.assertIn(viewlet, storage.getOrder(manager, skinname))
 
     def test_viewlets__order__collective_base_viewlet_manager_base(self):
         from zope.component import getUtility
@@ -107,6 +88,16 @@ class TestCase(IntegrationTestCase):
             u'abita.theme.viewlet.service-text',
             u'abita.theme.viewlet.recent-service',
             u'abita.theme.viewlet.news-listing'):
+            self.assertIn(viewlet, storage.getOrder(manager, skinname))
+
+    def test_viewlets__order__plone_abovecontent(self):
+        from zope.component import getUtility
+        from plone.app.viewletmanager.interfaces import IViewletSettingsStorage
+        storage = getUtility(IViewletSettingsStorage)
+        manager = "plone.abovecontent"
+        skinname = "*"
+        for viewlet in (
+            u'plone.path_bar', ):
             self.assertIn(viewlet, storage.getOrder(manager, skinname))
 
     def test_uninstall_package(self):

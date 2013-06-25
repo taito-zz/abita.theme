@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <object>
-  <order manager="plone.abovecontent" skinname="*">
-    <viewlet name="plone.path_bar" />
-  </order>
-  <order manager="collective.base.viewlet-manager.base" skinname="*">
+  <hidden manager="collective.base.viewlet-manager.base" skinname="*">
+    <viewlet name="abita.basetheme.viewlet.about" />
+  </hidden>
+  <order manager="collective.base.viewlet-manager.base" skinname="*" purge="True">
     <!-- @@view for interface: plone.app.layout.navigation.interfaces.INavigationRoot -->
     <viewlet name="abita.theme.viewlet.about" />
     <viewlet name="abita.theme.viewlet.recent-blog" />
@@ -19,5 +19,8 @@
     <viewlet name="abita.theme.viewlet.recent-service" />
     <!-- @@news-listing for content type: ATFolder -->
     <viewlet name="abita.theme.viewlet.news-listing" />
+  </order>
+  <order manager="plone.abovecontent" skinname="*">
+    <viewlet name="plone.path_bar" />
   </order>
 </object>

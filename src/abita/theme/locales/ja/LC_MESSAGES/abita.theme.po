@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2013-06-17 08:15+0000\n"
+"POT-Creation-Date: 2013-06-25 11:44+0000\n"
 "PO-Revision-Date: 2012-08-13 23:44+0900\n"
 "Last-Translator: Taito Horiuchi <taito.horiuchi@abita.fi>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
@@ -19,12 +19,21 @@ msgstr ""
 msgid "ABITA's major works"
 msgstr "アビタの主な仕事"
 
+msgid "Blog"
+msgstr "ブログ"
+
 msgid "Business"
 msgstr "ビジネス"
 
 #: ./browser/viewlets/work-history.pt:8
 msgid "Client"
 msgstr "依頼主"
+
+msgid "Contact"
+msgstr "問い合わせ"
+
+msgid "Contributions"
+msgstr "社会貢献"
 
 msgid "Coordination"
 msgstr "コーディネーション"
@@ -39,23 +48,29 @@ msgstr "フィンランド"
 msgid "Food"
 msgstr "食"
 
+msgid "News"
+msgstr "ニュース"
+
 msgid "Open Source Technology"
 msgstr "オープンソーステクノロジー"
 
-#: ./browser/viewlet.py:168
+#: ./browser/viewlet.py:214
 msgid "Recent blog"
 msgstr "最新のブログ"
 
-#: ./browser/viewlet.py:175
+#: ./browser/viewlet.py:221
 msgid "Recent contribution"
 msgstr "最近の社会貢献"
 
-#: ./browser/viewlet.py:153
+#: ./browser/viewlet.py:197
 msgid "Recent work"
 msgstr "最近の仕事"
 
 msgid "Research"
 msgstr "リサーチ"
+
+msgid "Services"
+msgstr "サービス"
 
 msgid "Society"
 msgstr "社会"
@@ -81,7 +96,7 @@ msgid "major-works-from-2004"
 msgstr "アビタの主な仕事　2004-${year}年"
 
 #. Default: "Recent ${something}"
-#: ./browser/viewlet.py:323
+#: ./browser/viewlet.py:375
 msgid "recent-something"
 msgstr "最近の${something}"
 

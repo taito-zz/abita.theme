@@ -1,4 +1,5 @@
 from Products.ATContentTypes.interfaces.document import IATDocument
+from Products.CMFCore.utils import getToolByName
 from abita.theme.browser.interfaces import IBaseSubjectView
 from abita.theme.browser.interfaces import IBaseView
 from abita.theme.browser.interfaces import INewsListingView
@@ -7,8 +8,8 @@ from abita.theme.browser.interfaces import IWorkHistoryEventView
 from abita.theme.browser.interfaces import IWorkHistoryView
 from collective.base.interfaces import IAdapter
 from collective.base.view import BaseView as BaseBaseView
-from zope.interface import implements
 from plone.memoize.view import memoize
+from zope.interface import implements
 
 
 class BaseView(BaseBaseView):
@@ -47,8 +48,12 @@ class BaseSubjectView(BaseView):
     @memoize
     def doc(self):
         """Return instance of ATDocument"""
+        languages = getToolByName(self.context, 'portal_languages')
+        code = languages.getPreferredLanguage()
+
         if self.subject():
-            return IAdapter(self.context).get_object(IATDocument, depth=1, Subject=self.subject(), sort_on="getObjPositionInParent")
+            return IAdapter(self.context).get_object(IATDocument, depth=1, Subject=self.subject(), sort_on="getObjPositionInParent", Language=code)
+        return self.context.get(code)
 
     def title(self):
         if self.doc():

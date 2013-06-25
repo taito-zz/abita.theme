@@ -7,6 +7,11 @@ abita.theme is for theming ABITA site.
 Changelog
 ---------
 
+0.17 (2013-06-25)
+=================
+
+- Fix for package: abita.policy removing dependency from plone.app.multilingual. [taito]
+
 0.16.3 (2013-06-20)
 ===================
 

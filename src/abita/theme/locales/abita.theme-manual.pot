@@ -17,7 +17,16 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: abita.theme\n"
 
+msgid "Blog"
+msgstr ""
+
 msgid "Business"
+msgstr ""
+
+msgid "Contact"
+msgstr ""
+
+msgid "Contributions"
 msgstr ""
 
 msgid "Coordination"
@@ -29,10 +38,16 @@ msgstr ""
 msgid "Food"
 msgstr ""
 
+msgid "News"
+msgstr ""
+
 msgid "Open Source Technology"
 msgstr ""
 
 msgid "Research"
+msgstr ""
+
+msgid "Services"
 msgstr ""
 
 msgid "Society"
