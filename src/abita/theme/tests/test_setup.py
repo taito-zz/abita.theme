@@ -18,6 +18,11 @@ class TestCase(IntegrationTestCase):
         from plone.browserlayer import utils
         self.assertIn(IAbitaThemeLayer, utils.registered_layers())
 
+    def test_catalog__index(self):
+        from Products.PluginIndexes.FieldIndex.FieldIndex import FieldIndex
+        catalog = getToolByName(self.portal, 'portal_catalog')
+        self.assertIsInstance(catalog.Indexes['Language'], FieldIndex)
+
     def test_cssregistry__abita_theme_main(self):
         resource = getToolByName(self.portal, 'portal_css').getResource('++resource++abita.theme/css/main.css')
         self.assertTrue(resource.getApplyPrefix())

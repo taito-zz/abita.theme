@@ -7,6 +7,11 @@ abita.theme is for theming ABITA site.
 Changelog
 ---------
 
+0.17.1 (2013-06-26)
+===================
+
+- Add catalog index: Lanugage. [taito]
+
 0.17 (2013-06-25)
 =================
 
