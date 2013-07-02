@@ -7,6 +7,11 @@ abita.theme is for theming ABITA site.
 Changelog
 ---------
 
+0.17.2 (2013-07-02)
+===================
+
+- Fix for news listing title. [taito]
+
 0.17.1 (2013-06-26)
 ===================
 

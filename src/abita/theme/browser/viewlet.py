@@ -372,7 +372,14 @@ class NewsListingViewlet(Viewlet):
 
         :rtype: str
         """
-        return _(u'recent-something', default=u"Recent ${something}", mapping={'something': safe_unicode(self.context.Title())})
+        languages = getToolByName(self.context, 'portal_languages')
+        code = languages.getPreferredLanguage()
+        brain = IAdapter(self.context).get_brain(IATDocument, depth=1, id=code)
+        if brain:
+            title = brain.Title
+        else:
+            title = self.context.Title()
+        return _(u'recent-something', default=u"Recent ${something}", mapping={'something': safe_unicode(title)})
 
     def available(self):
         """Return True or False

@@ -64,6 +64,16 @@ class NewsListingViewletTestCase(IntegrationTestCase):
             'url': 'http://nohost/plone?Subject=Ööö',
         }])
 
-    def test_title(self):
+    @mock.patch('abita.theme.browser.viewlet.safe_unicode')
+    @mock.patch('abita.theme.browser.viewlet.IAdapter')
+    def test_title(self, IAdapter, safe_unicode):
         instance = self.create_viewlet(NewsListingViewlet)
+        IAdapter().get_brain.return_value = None
         self.assertEqual(instance.title(), u'recent-something')
+        safe_unicode.assert_called_with(u'Plone site')
+
+        brain = mock.Mock()
+        brain.Title = 'TITLE'
+        IAdapter().get_brain.return_value = brain
+        self.assertEqual(instance.title(), u'recent-something')
+        safe_unicode.assert_called_with('TITLE')
