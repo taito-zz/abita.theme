@@ -1,0 +1,3 @@
+<section tal:attributes="id view/name" tal:condition="view/available">
+  <div tal:condition="view/text" tal:replace="structure view/text" />
+</section>

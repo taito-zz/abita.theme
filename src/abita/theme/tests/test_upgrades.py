@@ -12,6 +12,13 @@ class UpgradesTestCase(unittest.TestCase):
         step.runImportStepFromProfile.assert_called_with('profile-abita.theme:default', 'viewlets',
             run_dependencies=False, purge_old=False)
 
+    def test_reimport_registry(self):
+        from abita.theme.upgrades import reimport_registry
+        step = mock.Mock()
+        reimport_registry(step)
+        step.runImportStepFromProfile.assert_called_with('profile-abita.theme:default', 'plone.app.registry',
+            run_dependencies=False, purge_old=False)
+
     def test_reimport_typeinfo(self):
         from abita.theme.upgrades import reimport_typeinfo
         step = mock.Mock()

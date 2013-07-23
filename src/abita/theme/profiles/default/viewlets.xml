@@ -6,7 +6,6 @@
   <order manager="collective.base.viewlet-manager.base" skinname="*" purge="True">
     <!-- @@view for interface: plone.app.layout.navigation.interfaces.INavigationRoot -->
     <viewlet name="abita.theme.viewlet.about" />
-    <viewlet name="abita.theme.viewlet.recent-blog" />
     <viewlet name="abita.theme.viewlet.recent-work" />
     <viewlet name="abita.theme.viewlet.recent-contribution" />
     <!-- @@work-history for content type: ATFolder -->

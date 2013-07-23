@@ -7,6 +7,13 @@ abita.theme is for theming ABITA site.
 Changelog
 ---------
 
+0.18 (2013-07-23)
+=================
+
+- Remove viewlet: abita.theme.viewlet.recent-blog. [taito]
+- Override viewlet: plone.htmlhead.dublincore. [taito]
+- Add registry.xml for abita.development. [taito]
+
 0.17.2 (2013-07-02)
 ===================
 

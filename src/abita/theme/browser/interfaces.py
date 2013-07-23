@@ -84,10 +84,6 @@ class IRecentWorkViewlet(IBaseRecentViewlet):
     """Viewlet interface to show recent work"""
 
 
-class IRecentBlogViewlet(IBaseRecentViewlet):
-    """Viewlet interface to show recent blog"""
-
-
 class IRecentContributionViewlet(IBaseRecentViewlet):
     """Viewlet interface to show recent work"""
 

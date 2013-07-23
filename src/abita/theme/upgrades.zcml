@@ -63,4 +63,24 @@
     title="Reimport viewlets"
     />
 
+  <genericsetup:upgradeStep
+    description=""
+    destination="6"
+    handler="abita.theme.upgrades.reimport_viewlets"
+    profile="abita.theme:default"
+    sortkey="1"
+    source="5"
+    title="Reimport viewlets"
+    />
+
+  <genericsetup:upgradeStep
+    description=""
+    destination="6"
+    handler="abita.theme.upgrades.reimport_registry"
+    profile="abita.theme:default"
+    sortkey="2"
+    source="5"
+    title="Reimport registry"
+    />
+
 </configure>

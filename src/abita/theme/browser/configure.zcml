@@ -52,6 +52,14 @@
   <!-- Viewlet -->
 
   <browser:viewlet
+    class=".viewlet.DublinCoreViewlet"
+    layer=".interfaces.IAbitaThemeLayer"
+    manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
+    name="plone.htmlhead.dublincore"
+    permission="zope2.View"
+    />
+
+  <browser:viewlet
     class=".viewlet.GlobalSectionsViewlet"
     layer=".interfaces.IAbitaThemeLayer"
     manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
@@ -94,16 +102,6 @@
     layer=".interfaces.IAbitaThemeLayer"
     manager="collective.base.interfaces.IBaseViewViewletManager"
     name="abita.theme.viewlet.recent-work"
-    permission="zope2.View"
-    view="abita.basetheme.browser.interfaces.INavigationRootView"
-    />
-
-  <browser:viewlet
-    class=".viewlet.RecentBlogViewlet"
-    for="plone.app.layout.navigation.interfaces.INavigationRoot"
-    layer=".interfaces.IAbitaThemeLayer"
-    manager="collective.base.interfaces.IBaseViewViewletManager"
-    name="abita.theme.viewlet.recent-blog"
     permission="zope2.View"
     view="abita.basetheme.browser.interfaces.INavigationRootView"
     />

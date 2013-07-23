@@ -1,5 +1,7 @@
 from Products.CMFCore.utils import getToolByName
 from abita.theme.tests.base import IntegrationTestCase
+from plone.registry.interfaces import IRegistry
+from zope.component import getUtility
 
 
 class TestCase(IntegrationTestCase):
@@ -58,7 +60,11 @@ class TestCase(IntegrationTestCase):
     def test_metadata__version(self):
         setup = getToolByName(self.portal, 'portal_setup')
         self.assertEqual(
-            setup.getVersionForProfile('profile-abita.theme:default'), u'5')
+            setup.getVersionForProfile('profile-abita.theme:default'), u'6')
+
+    def test_registry(self):
+        self.assertEqual(getUtility(IRegistry)['abita.development.rate'], 10.0)
+        self.assertEqual(getUtility(IRegistry)['abita.development.vat'], 0.0)
 
     def test_types__Folder(self):
         types = getToolByName(self.portal, 'portal_types')
@@ -84,7 +90,6 @@ class TestCase(IntegrationTestCase):
         skinname = "*"
         for viewlet in (
             u'abita.theme.viewlet.about',
-            u'abita.theme.viewlet.recent-blog',
             u'abita.theme.viewlet.recent-work',
             u'abita.theme.viewlet.recent-contribution',
             u'abita.theme.viewlet.work-history',

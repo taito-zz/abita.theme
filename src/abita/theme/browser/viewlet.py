@@ -5,16 +5,16 @@ from Products.ATContentTypes.interfaces.event import IATEvent
 from Products.ATContentTypes.interfaces.folder import IATFolder
 from Products.ATContentTypes.interfaces.news import IATNewsItem
 from Products.CMFCore.utils import getToolByName
+from Products.CMFPlone.interfaces import IPloneSiteRoot
 from Products.CMFPlone.utils import safe_unicode
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from abita.basetheme.browser.interfaces import IAboutViewlet
-from abita.basetheme.browser.viewlet import BaseDocumentViewlet
+from abita.basetheme.browser.viewlet import BaseDocumentViewlet as BaseBaseDocumentViewlet
 from abita.theme import _
 from abita.theme.browser.interfaces import IBaseRecentViewlet
 from abita.theme.browser.interfaces import IFolderTagsViewlet
 from abita.theme.browser.interfaces import IKeywordsViewlet
 from abita.theme.browser.interfaces import INewsListingViewlet
-from abita.theme.browser.interfaces import IRecentBlogViewlet
 from abita.theme.browser.interfaces import IRecentContributionViewlet
 from abita.theme.browser.interfaces import IRecentServiceViewlet
 from abita.theme.browser.interfaces import IRecentWorkViewlet
@@ -25,10 +25,38 @@ from abita.theme.browser.interfaces import IWorkHistoryViewlet
 from abita.theme.interfaces import IEventAdapter
 from collective.base.interfaces import IAdapter
 from collective.base.viewlet import Viewlet
+from plone.app.layout.viewlets.common import DublinCoreViewlet as BaseDublinCoreViewlet
 from plone.app.layout.viewlets.common import GlobalSectionsViewlet as BaseGlobalSectionsViewlet
 from plone.memoize.view import memoize
 from zope.component import getMultiAdapter
 from zope.interface import implements
+
+
+class BaseDocumentViewlet(BaseBaseDocumentViewlet):
+
+    @memoize
+    def obj(self):
+        """Return ATDocument object
+
+        :rtype: obj
+        """
+        languages = getToolByName(self.context, 'portal_languages')
+        code = languages.getPreferredLanguage()
+        return self.context.get(code)
+
+
+class DublinCoreViewlet(BaseDublinCoreViewlet, BaseDocumentViewlet):
+
+    def update(self):
+        super(DublinCoreViewlet, self).update()
+        if IPloneSiteRoot.providedBy(self.context):
+            obj = self.obj()
+            if obj:
+                description = obj.Description()
+                if description:
+                    tags = dict(self.metatags)
+                    tags['description'] = description
+                    self.metatags = tags.items()
 
 
 class GlobalSectionsViewlet(BaseGlobalSectionsViewlet):
@@ -56,16 +84,7 @@ class GlobalSectionsViewlet(BaseGlobalSectionsViewlet):
 class AboutViewlet(BaseDocumentViewlet):
     """Viewlet: abita.basetheme.viewlet.about"""
     implements(IAboutViewlet)
-
-    @memoize
-    def obj(self):
-        """Return ATDocument object
-
-        :rtype: obj
-        """
-        languages = getToolByName(self.context, 'portal_languages')
-        code = languages.getPreferredLanguage()
-        return self.context.get(code)
+    index = ViewPageTemplateFile('viewlets/about.pt')
 
 
 class KeywordsViewlet(Viewlet):
@@ -205,13 +224,6 @@ class RecentWorkViewlet(BaseRecentViewlet):
         languages = getToolByName(self.context, 'portal_languages')
         code = languages.getPreferredLanguage()
         return IAdapter(self.context).get_brain(IATEvent, path=self._path(), sort_on='end', sort_order='descending', Language=code)
-
-
-class RecentBlogViewlet(BaseRecentViewlet):
-    """Viewlet to show recent blog"""
-    implements(IRecentBlogViewlet)
-    parent_folder_id = 'blog'
-    title = _(u'Recent blog')
 
 
 class RecentContributionViewlet(BaseRecentViewlet):
