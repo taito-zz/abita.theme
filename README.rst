@@ -7,6 +7,11 @@ abita.theme is for theming ABITA site.
 Changelog
 ---------
 
+0.18.1 (2014-01-06)
+===================
+
+- Get rid of Abita LLC from footer. [taito]
+
 0.18 (2013-07-23)
 =================
 
