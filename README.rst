@@ -7,6 +7,11 @@ abita.theme is for theming ABITA site.
 Changelog
 ---------
 
+0.18.2 (2014-07-09)
+===================
+
+- Remove telephone number from footer. [taito]
+
 0.18.1 (2014-01-06)
 ===================
 
