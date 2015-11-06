@@ -14,6 +14,8 @@ class AbitaThemeLayer(PloneSandboxLayer):
     def setUpZope(self, app, configurationContext):
         """Set up Zope."""
         # Load ZCML
+        import plone.dexterity
+        self.loadZCML(package=plone.dexterity)
         import abita.theme
         self.loadZCML(package=abita.theme)
 

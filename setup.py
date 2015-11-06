@@ -26,7 +26,7 @@ setup(
         'abita.basetheme',
         'setuptools',
         'z3c.jbot'],
-    extras_require={'test': ['hexagonit.testing']},
+    extras_require={'test': ['plone.dexterity', 'hexagonit.testing']},
     entry_points="""
     # -*- Entry points: -*-
 
