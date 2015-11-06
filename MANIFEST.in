@@ -1,8 +1,10 @@
 recursive-include src *
 include *
 exclude .gitignore
+exclude .long-description.html
 exclude .travis.yml
 exclude MANIFEST.in
 exclude bootstrap.py
 exclude travis.cfg
-global-exclude *.pyc
+global-exclude *.pyc *.mo *.pyo *.swp
+prune .git
